@@ -1,6 +1,6 @@
 Lumin
 PlayerPath?
-C:/Users/topdu/Desktop/Compete/Compete_Private.mpk
+C:/Users/topdu/Desktop/Compete/Compete_Dev.mpk
 SceneListBegin?
 Assets/Scenes/Main.unity
 Assets/Scenes/Bowling.unity
@@ -30,6 +30,7 @@ d13828ddfa3ec84a2dbe7846711c2eac Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.Co
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MagicLeap.PersistentBall
 5a697538d60f45979c9e06eb02ce9392 Assembly-CSharp.dll:MagicLeap.RaycastVisualizer
 d1098b55fe8df1d4aca09e4b36a14b77 Assembly-CSharp.dll:MagicLeap.ControllerStatsText
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BallVelocity
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -148,6 +149,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 c98499002504d0f8281d8e267ef2441f Assembly-CSharp.dll:MagicLeap.MobileAppExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Controller
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DartMenuCollide
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DartColorLoader
 a7cd020caf337fa36394a15785b5ab99 Assembly-CSharp.dll:MagicLeap.ControllerStatusIndicator
 d63377ae9c9caaf6da7a6c1602639cf1 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.WorldRaycastController
 83e6cb6b2ab5776d20963491ed657b46 Assembly-CSharp.dll:MagicLeap.MusicServiceExample
@@ -161,6 +164,7 @@ b070c608a2c3037a3af830af58b00d9b Assembly-CSharp.dll:MagicLeap.DestroyAfterTime
 cb11bad297ab0b4271df38fdade7ef07 Assembly-CSharp.dll:MagicLeap.ImageTrackingVisualizer
 7c6cfca53c94c1ede60129ec50d74252 Assembly-CSharp.dll:MagicLeap.ImageTrackingExample
 8234eb6652149e31d76420b6f5205093 Assembly-CSharp.dll:MagicLeap.KeyPoseVisualizer
+09e70cc7ce1871b1c176e7c01b1e79e7 Assembly-CSharp.dll:.BowlingManager
 c51003c9192e8c26fa1b5347c6106b74 Assembly-CSharp.dll:MagicLeap.PlacementObject
 a814b880ff4f40c17dfbb0350c7828a2 Assembly-CSharp.dll:MagicLeap.ControllerVisualizer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu
@@ -183,6 +187,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 bd8dba5f8f9406c24767e50bdfeaf214 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.ComboRaycastHead
 f36938efaa7ce487353613298530bb19 Assembly-CSharp.dll:MagicLeap.VideoCaptureExample
 9674758b3e641c81b6373bf74cebaf45 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.MLPersistentPoint
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BowlingColorLoader
 60bd7ec0156ebe9c7853f1955096e6b1 Assembly-CSharp.dll:MagicLeap.HandTrackingVisualizer
 a91da900140bff5fc7cde8b3b44d55f6 Assembly-CSharp.dll:MagicLeap.MasterMaterialController
 9de3a22eca9aefadba2d10d5987cefe3 LuminUnity.dll:UnityEngine.XR.MagicLeap.MagicLeapDevice
@@ -215,32 +220,27 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MagicLeap.ControllerFeedbackExample
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuCollide
 4811f0dfd53a3da0aad4f579f1922ee8 Assembly-CSharp.dll:MagicLeap.PlacementVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 0ccd1f40c3aa78c3b00035f0d9decce4 Assembly-CSharp.dll:MagicLeap.MeshingExample
 9674758b3e641c81b6373bf74cebaf45 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.MLPersistentBehavior
 9e405adee553fe2560a33dd954e3ab45 MSA.Runtime.dll:MSA.MSAListener
 9f7e98f3c74722d33450341091b5ed75 MSA.Runtime.dll:MSA.MSASource
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BowlingPlaceObject
 bd8dba5f8f9406c24767e50bdfeaf214 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.ComboRaycastEyes
 8ef655ebebfe0955a6bf746ebeb600b6 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.PrivilegeDeniedError
 438b028f4186ddc492eac801f701928a Assembly-CSharp.dll:MagicLeap.FaceCamera
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BallHitDetector
 62aa5a5271dcb795614557fb0a6df1b8 Assembly-CSharp.dll:MagicLeap.AudioCaptureExample
 5f39f2dfbef172e9af674353fc4e86eb Assembly-CSharp.dll:MagicLeap.MediaPlayerExample
 0ec6a03f674d5d1190247aa03ae676b1 Assembly-CSharp.dll:MagicLeap.MediaPlayerButton
 8211b4aad94d74fc36c9d5ad5c02d73e Assembly-CSharp.dll:MagicLeap.MaterialForegroundColorController
 22eb76d506347cff3059963b49529aee Assembly-CSharp.dll:MagicLeap.VignetteExample
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DartCollider
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MagicLeap.ContentDragHandler
 470efe9848fbf1a9b88e929732c3cca1 Assembly-CSharp.dll:MagicLeap.PlacementExample
 66eb4003e71585f0ef4c23034c2aa3b2 Assembly-CSharp.dll:MagicLeap.VirtualPointer
 08a92322e38205b685c92fa359d21d7a Assembly-CSharp.dll:MagicLeap.MeshingVisualizer
 2c832bb50381ee4d40b2f62c67f06a67 Assembly-CSharp.dll:MagicLeap.DeepSeaExplorerLauncher
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DartCollider
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BallVelocity
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BallHitDetector
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuCollide
-09e70cc7ce1871b1c176e7c01b1e79e7 Assembly-CSharp.dll:.BowlingManager
 db55d01a29df0e0982e31eaffd6d542b Assembly-CSharp.dll:.DartsManager
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DartMenuCollide
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BowlingColorLoader
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BowlingPlaceObject
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DartColorLoader

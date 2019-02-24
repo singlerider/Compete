@@ -149,6 +149,9 @@ public class BowlingManager : MonoBehaviour {
 			laserLineRenderer.material = transparent;
 			if (controller.TriggerValue >= 0.9f) {
 				if (holdingBall ) {
+					bowlingBall.transform.position = controller.Position;
+					bowlingBall.transform.rotation = controller.Orientation;
+
 					HoldingBall ();
 				} else {
 					holdingBall = true;
@@ -172,8 +175,8 @@ public class BowlingManager : MonoBehaviour {
 				holdingBall = false;
 				var rigidbody = bowlingBall.GetComponent<Rigidbody> ();
 				// Enable the rigidbody on the ball, then apply current forces to the ball
-				rigidbody.useGravity = true;
-				rigidbody.velocity = Vector3.zero;
+				//rigidbody.useGravity = true;
+				//rigidbody.velocity = Vector3.zero;
 				rigidbody.velocity = forcePerSecond;
 			} else {
 				placed = false;
@@ -194,7 +197,7 @@ public class BowlingManager : MonoBehaviour {
 			toAverage += toAdd;
 		}
 		toAverage /= Deltas.Count;
-		var forcePerSecondAvg = toAverage * 120;
+		var forcePerSecondAvg = toAverage * 1200;
 		forcePerSecond = forcePerSecondAvg;
 		bowlingBall.transform.position = controller.Position;
 	}
@@ -240,11 +243,11 @@ public class BowlingManager : MonoBehaviour {
 					Instantiate (tenPinPrefab, endPosition, tenPinOrientation.transform.rotation, pinHolder);
 				} else if (holding == holdState.ball) {
 					//Spawn ball, then set color based on PlayerPrefs value
-					holdingBall = true;
-					bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation, pinHolder);
-					Transform ballObject = bowlingBall.transform.GetChild (0);
-					Renderer ballMat = ballObject.GetComponent<Renderer> ();
-					ballMat.material = ballMats[PlayerPrefs.GetInt ("ballColorInt", 0)];
+					// holdingBall = true;
+					// bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation, pinHolder);
+					// Transform ballObject = bowlingBall.transform.GetChild (0);
+					// Renderer ballMat = ballObject.GetComponent<Renderer> ();
+					// ballMat.material = ballMats[PlayerPrefs.GetInt ("ballColorInt", 0)];
 				}
 			} else if (noGravity) {
 				if (holding == holdState.single) {
