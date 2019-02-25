@@ -55,6 +55,8 @@ public class BowlingManager : MonoBehaviour {
 
 		checkController = control.GetComponentInChildren<Controller> ();
 
+		bowlingBall = Instantiate (ballPrefab, new Vector3 (100, 100, 100), tenPinOrientation.transform.rotation, pinHolder);
+
 		// TODO: Double check that this line is not needed as ball colors are called when balls are spawned
 		// BowlingColorLoader.LoadBallColor (bowlingBall, ballMats);
 
@@ -112,7 +114,6 @@ public class BowlingManager : MonoBehaviour {
 			if (rayHit.transform.gameObject.name == "Home" && controller.TriggerValue >= 0.9f) {
 				SceneManager.LoadScene ("Main", LoadSceneMode.Single);
 			} else if (rayHit.transform.gameObject.name == "ChangeBall" && controller.TriggerValue >= 0.9f) {
-				bowlingBall = Instantiate (ballPrefab, new Vector3 (100, 100, 100), tenPinOrientation.transform.rotation, pinHolder);
 				ballMenu.transform.position = mainCam.transform.position + (mainCam.transform.forward * 1.5f);
 				ballMenu.transform.rotation = mainCam.transform.rotation;
 				ballMenu.SetActive (true);
@@ -149,9 +150,6 @@ public class BowlingManager : MonoBehaviour {
 			laserLineRenderer.material = transparent;
 			if (controller.TriggerValue >= 0.9f) {
 				if (holdingBall ) {
-					bowlingBall.transform.position = controller.Position;
-					bowlingBall.transform.rotation = controller.Orientation;
-
 					HoldingBall ();
 				} else {
 					holdingBall = true;
@@ -163,7 +161,7 @@ public class BowlingManager : MonoBehaviour {
 		} else if (holding == holdState.tenPin) { 
 			laserLineRenderer.material = activeMat;
 		} else if (holding == holdState.none) {
-			laserLineRenderer.material = transparent;
+			laserLineRenderer.material = activeMat;
 		}
 		if (controller.TriggerValue >= 0.9f) {
 			if (placed == false) {
@@ -175,15 +173,17 @@ public class BowlingManager : MonoBehaviour {
 				holdingBall = false;
 				var rigidbody = bowlingBall.GetComponent<Rigidbody> ();
 				// Enable the rigidbody on the ball, then apply current forces to the ball
-				//rigidbody.useGravity = true;
+				rigidbody.useGravity = true;
 				//rigidbody.velocity = Vector3.zero;
-				rigidbody.velocity = forcePerSecond;
+				rigidbody.AddForce(forcePerSecond);
+				forcePerSecond = Vector3.zero;
 			} else {
 				placed = false;
 			}
 		}
 	}
 	private void HoldingBall () {
+		bowlingBall.transform.rotation = Quaternion.identity;
 		var oldPosition = bowlingBall.transform.position;
 		var newPosition = controller.Position;
 
@@ -197,7 +197,7 @@ public class BowlingManager : MonoBehaviour {
 			toAverage += toAdd;
 		}
 		toAverage /= Deltas.Count;
-		var forcePerSecondAvg = toAverage * 1200;
+		var forcePerSecondAvg = toAverage * 500;
 		forcePerSecond = forcePerSecondAvg;
 		bowlingBall.transform.position = controller.Position;
 	}

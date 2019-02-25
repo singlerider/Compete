@@ -1,6 +1,6 @@
 Lumin
 PlayerPath?
-C:/Users/topdu/Desktop/Compete/Compete_Dev.mpk
+C:/Users/topdu/Desktop/Compete/Compete_Private.mpk
 SceneListBegin?
 Assets/Scenes/Main.unity
 Assets/Scenes/Bowling.unity

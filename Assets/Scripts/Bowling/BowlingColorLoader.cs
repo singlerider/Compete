@@ -43,8 +43,13 @@ public class BowlingColorLoader : MonoBehaviour {
 	public static void LoadBallColor (GameObject bowlingBall, Material[] ballMats) {
 		Transform ballObject = bowlingBall.transform.GetChild (0);
 		Renderer ballRender = ballObject.GetComponent<Renderer> ();
-		int savedBallColor = PlayerPrefs.GetInt ("ballColorInt", 0);
-		ballRender.material = ballMats[savedBallColor];
+		int savedBallColor = PlayerPrefs.GetInt ("ballColorInt", 2);
+		if (savedBallColor >= 0 && savedBallColor <= 4) {
+			ballRender.material = ballMats[savedBallColor];
+		} else {
+			ballRender.material = ballMats[0];
+		}
+
 	}
 
 }

@@ -663,11 +663,11 @@ PlayerSettings:
     m_ModelFolderPath: C:/Users/topdu/Downloads/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/Icon/BowlingIcon/Icon/Model
     m_PortalFolderPath: C:/Users/topdu/Downloads/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: C:/Users/topdu/Downloads/privatekey/homedesktop.cert
+    m_CertPath: C:/Users/topdu/Downloads/PrivateMLWorld/PrivateMLWorld/ml-sports-cd8f2512.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:
-    m_VersionCode: 6
+    m_VersionCode: 7
     m_VersionName: 
   luminPrivilege:
   - ControllerPose
