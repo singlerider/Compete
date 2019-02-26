@@ -580,7 +580,8 @@ PlayerSettings:
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Lumin: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_Lightweight
@@ -672,6 +673,8 @@ PlayerSettings:
   luminPrivilege:
   - ControllerPose
   - WorldReconstruction
+  - Internet
+  - LocalAreaNetwork
   luminMinimumPlatformAPILevel: 3
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2

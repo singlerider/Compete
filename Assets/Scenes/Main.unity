@@ -833,7 +833,7 @@ Transform:
   m_LocalScale: {x: 0.037661053, y: 0.2184341, z: 0.011859555}
   m_Children: []
   m_Father: {fileID: 1513310555}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 178.81, z: 0}
 --- !u!1 &1071734678
 GameObject:
@@ -1214,7 +1214,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1513310554}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.004014237, w: 0.99999195}
   m_LocalPosition: {x: 0, y: 0, z: 0.342}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1222,16 +1222,16 @@ RectTransform:
   - {fileID: 1227141118}
   - {fileID: 1079278198}
   - {fileID: 50181165}
-  - {fileID: 1274033823}
   - {fileID: 1053365431}
+  - {fileID: 1274033823}
   - {fileID: 519328454}
   - {fileID: 1071734679}
   m_Father: {fileID: 1647423194}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.46}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.072}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1627850622 stripped
@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserLineRenderer: {fileID: 1687258587}
-  control: {fileID: 0}
+  control: {fileID: 1005085590}
   mainMenu: {fileID: 1513310554}
   privacyPolicyMenu: {fileID: 1361438880}
 --- !u!120 &1687258587
