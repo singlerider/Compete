@@ -79,16 +79,16 @@
   },
   {
    "compression": 8,
-   "hash": "d41daa79379a081f0482bd27edb844c18e5ebd88",
+   "hash": "c4af786926038b3c36a2030eec665611f68eddaf",
    "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
-   "size": 2851636,
+   "size": 2851692,
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
   },
   {
    "compression": 8,
-   "hash": "ed6955d40ee8b1c58f1ec41b1c8eeabaf26dc0d5",
+   "hash": "4617a81b1969a5846d8203594f4ff9baf3de15e3",
    "pkgpath": "bin/libil2cpp.so",
-   "size": 34700872,
+   "size": 34705128,
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Data/Native/libil2cpp.so",
    "xfrm_flags": {
     "signed": {
@@ -99,9 +99,9 @@
      "version": 3
     }
    },
-   "xfrm_hash": "779ecc1726a5115638aadfc5b1cda3abc493766a",
+   "xfrm_hash": "5d0bfe3d00f38a8b3c731c49f8a46a60d488ce02",
    "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\libil2cpp.so-c22a262ec12b37f7",
-   "xfrm_size": 34701637
+   "xfrm_size": 34705893
   },
   {
    "compression": 8,
@@ -244,7 +244,7 @@
   },
   {
    "compression": 8,
-   "hash": "d3da99f29f445375fbcf90352a4ef4dce1349043",
+   "hash": "506a0cae94a51c3d2ca03cced8aa49150572dc94",
    "pkgpath": "Data/globalgamemanagers",
    "size": 36320,
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Data/globalgamemanagers"
@@ -265,7 +265,7 @@
   },
   {
    "compression": 8,
-   "hash": "ca071c178c2a61fdd31c5a3c7fa3b4c95bf9a2ca",
+   "hash": "a1faebd60ef031aabcab7911d69ea6df6fb371a7",
    "pkgpath": "Data/level1",
    "size": 21920,
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Data/level1"
@@ -279,7 +279,7 @@
   },
   {
    "compression": 8,
-   "hash": "3b32f28affe8d7cbd59b0aa2a3fd5499124ab6ff",
+   "hash": "59f30519d3ac32a3ca7c8c24a1926b563580eb9f",
    "pkgpath": "Data/level2",
    "size": 15760,
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Data/level2"
@@ -422,7 +422,7 @@
   },
   {
    "compression": 8,
-   "hash": "b5cbba7b58c4d482a14e0d57f25ce34d1b9bb2de",
+   "hash": "6c8a7cb76083f6465d0f0942a50fda137dd0c6a6",
    "pkgpath": "manifest.xml",
    "size": 638,
    "src": "C:\\Users\\topdu\\Desktop\\Compete\\Temp\\StagingArea\\manifest.xml",
@@ -432,7 +432,7 @@
      "developer_id": "38b77cd9-c4ec-4390-8572-6dbe497dcf92.cd8f2512-c077-49a9-b7ed-6b890fc3ec8c"
     }
    },
-   "xfrm_hash": "2bcb8cd25642acc41cda9a5a2337eed520712d07",
+   "xfrm_hash": "97da598add03d70fd69bbab6b4d7ca8b89774b39",
    "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\manifest.xml-064277d9b5950a96",
    "xfrm_size": 687
   }

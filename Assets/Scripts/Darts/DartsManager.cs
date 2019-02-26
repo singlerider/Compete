@@ -21,8 +21,9 @@ public class DartsManager : MonoBehaviour {
 	private Vector3 endPosition, forcePerSecond;
 	private float timeHold = 3.0f, totalObjs = 0, objLimit = 50;
 	private Controller checkController;
-	private bool setHand = false, holdingDart = false, dartboardPlaced = false, letGoDartboard = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed;
+	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, movingDartboard = true;
 	private static bool menuClosed = false, menuOpened = false;
+	public static bool lockedDartboard = false;
 	List<Vector3> Deltas = new List<Vector3> ();
 
 	// Use this for initialization
@@ -121,8 +122,8 @@ public class DartsManager : MonoBehaviour {
 	}
 	private void PlaceObject () {
 		if (holding == holdState.dart) {
-			// Vector3[] zero = new Vector3[2] { Vector3.zero, Vector3.zero };
-			// laserLineRenderer.SetPositions (zero);
+			movingDartboard = true;
+			laserLineRenderer.material = transparent;
 			if (controller.TriggerValue >= 0.9f) {
 				if (holdingDart) {
 					HoldingDart();
@@ -138,31 +139,27 @@ public class DartsManager : MonoBehaviour {
 				rigidbody.velocity = forcePerSecond;
 			}
 		} else if (holding == holdState.dartboard) {
+			print("hmm");
+			dartboardHolder.SetActive(true);
 			if (controller.TriggerValue >= 0.9f) {
-				if (dartboardPlaced) {
-					if (letGoDartboard) {
-						dartboardPlaced = false;
-						dartboardHolder.transform.position = endPosition;
-						dartboardHolder.transform.rotation = Quaternion.LookRotation (-mainCam.transform.up, -mainCam.transform.forward);
-						letGoDartboard = false;
-					}
-				} else {
+				if (!lockedDartboard) {
+					print("Should see dartboard");
+					movingDartboard = false;
 					var dartboardCollider = dartboard.GetComponent<BoxCollider> ();
 					dartboardCollider.enabled = true;
-					dartboardPlaced = true;
+					lockedDartboard = true;
 				}
 			} else if (controller.TriggerValue <= 0.2f) {
-				if (dartboardPlaced && !letGoDartboard) {
-					letGoDartboard = true;
+				if (movingDartboard) {
+					dartboardHolder.transform.position = endPosition;
+					dartboardHolder.transform.rotation = Quaternion.LookRotation (-mainCam.transform.up, -mainCam.transform.forward);
+					lockedDartboard = false;
+				} else {
+					laserLineRenderer.material = transparent;
 				}
 			}
-			if (dartboardPlaced == false) {
-				dartboardHolder.SetActive (true);
-				dartboardHolder.transform.position = endPosition;
-				dartboardHolder.transform.rotation = Quaternion.LookRotation (-mainCam.transform.up, -mainCam.transform.forward);
-			}
 		} else if (holding == holdState.none) {
-			//TODO: Something when no holdState is detected
+			laserLineRenderer.material = activeMat;
 		}
 	}
 	private void HoldingDart () {
