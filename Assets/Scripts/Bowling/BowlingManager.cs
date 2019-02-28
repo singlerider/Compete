@@ -22,7 +22,7 @@ public class BowlingManager : MonoBehaviour {
 	public static holdState holding = holdState.single;
 	public static menuState currentMenuState;
 	private MLInputController controller;
-	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu;
+	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube;
 	public static GameObject menuControl;
 	private GameObject bowlingBall;
 	public Material transparent, activeMat;
@@ -35,11 +35,13 @@ public class BowlingManager : MonoBehaviour {
 	private Controller checkController;
 	public static float growSpeed;
 	public static string ballColor;
-	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed;
+	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false;
 	private static bool menuClosed = false;
+
 	// Use this for initialization
 	void Start () {
-		CheckNewUser();
+
+		CheckNewUser ();
 		MLInput.Start ();
 
 		growSpeed = 5f;
@@ -55,10 +57,7 @@ public class BowlingManager : MonoBehaviour {
 
 		checkController = control.GetComponentInChildren<Controller> ();
 
-		bowlingBall = Instantiate (ballPrefab, new Vector3 (100, 100, 100), tenPinOrientation.transform.rotation, pinHolder);
-
-		// TODO: Double check that this line is not needed as ball colors are called when balls are spawned
-		// BowlingColorLoader.LoadBallColor (bowlingBall, ballMats);
+		bowlingBall = Instantiate (ballPrefab, new Vector3 (100, 100, 100), tenPinOrientation.transform.rotation);
 
 	}
 	private void OnDestroy () {
@@ -67,14 +66,17 @@ public class BowlingManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 		control.transform.position = controller.Position;
 		control.transform.rotation = controller.Orientation;
+		//HoldingBall();
 		if (tutorialActive == false) {
 			SetLine ();
 			PlaceObject ();
 		} else {
-			if (controller.Touch1Active || controller.TriggerValue >= 0.2f || tutorialBumperPressed == true || tutorialHomePressed == true) {
-				CheckNewUser();
+			if ((controller.Touch1Active || controller.TriggerValue >= 0.2f || tutorialBumperPressed == true || tutorialHomePressed == true) && tutorialMenuOpened == false) {
+				laserLineRenderer.material = activeMat;
+				CheckNewUser ();
 			}
 		}
 		if (controller.Touch1Active) {
@@ -97,7 +99,9 @@ public class BowlingManager : MonoBehaviour {
 		if (checkController.bumperTimer.getTime () >= timeHold) {
 			ClearAllObjects ();
 		}
-
+		if (controller.TriggerValue <= 0.2f && tutorialMenuOpened == true) {
+			tutorialMenuOpened = false;
+		}
 
 	}
 	private void SetLine () {
@@ -125,10 +129,23 @@ public class BowlingManager : MonoBehaviour {
 				modifierMenu.SetActive (true);
 				menu.SetActive (false);
 				menuClosed = true;
+			} else if (rayHit.transform.gameObject.name == "Tutorial" && controller.TriggerValue >= 0.9f) {
+				menuClosed = true;
+				menuOpened = false;
+				menu.SetActive (false);
+				holding = holdState.none;
+				tutorialActive = true;
+				tutorialMenuOpened = true;
+				tutorialMenu.SetActive (true);
+				tutorialBumperPressed = false;
+				tutorialHomePressed = false;
+				laserLineRenderer.material = transparent;
+				PlayerPrefs.SetInt ("hasPlayedBowling", 0);
+				CheckNewUser ();
 			} else if (rayHit.transform.gameObject.name == "NoGravity" && controller.TriggerValue >= 0.9f) {
 				if (noGravity) {
 					noGravity = false;
-				}  else {
+				} else {
 					noGravity = true;
 				}
 				modifierMenu.SetActive (false);
@@ -149,7 +166,7 @@ public class BowlingManager : MonoBehaviour {
 		if (holding == holdState.ball) {
 			laserLineRenderer.material = transparent;
 			if (controller.TriggerValue >= 0.9f) {
-				if (holdingBall ) {
+				if (holdingBall) {
 					HoldingBall ();
 				} else {
 					holdingBall = true;
@@ -158,24 +175,25 @@ public class BowlingManager : MonoBehaviour {
 			}
 		} else if (holding == holdState.single) {
 			laserLineRenderer.material = activeMat;
-		} else if (holding == holdState.tenPin) { 
+		} else if (holding == holdState.tenPin) {
 			laserLineRenderer.material = activeMat;
-		} else if (holding == holdState.none) {
+		} else if (holding == holdState.none && tutorialMenuOpened == false) {
 			laserLineRenderer.material = activeMat;
 		}
 		if (controller.TriggerValue >= 0.9f) {
 			if (placed == false) {
 				SpawnObject ();
-				placed = true;	
+				placed = true;
 			}
 		} else if (controller.TriggerValue <= 0.2f) {
 			if (holdingBall == true) {
+				Deltas.Clear ();
 				holdingBall = false;
 				var rigidbody = bowlingBall.GetComponent<Rigidbody> ();
 				// Enable the rigidbody on the ball, then apply current forces to the ball
 				rigidbody.useGravity = true;
-				//rigidbody.velocity = Vector3.zero;
-				rigidbody.AddForce(forcePerSecond);
+				rigidbody.velocity = Vector3.zero;
+				rigidbody.AddForce (forcePerSecond);
 				forcePerSecond = Vector3.zero;
 			} else {
 				placed = false;
@@ -183,12 +201,16 @@ public class BowlingManager : MonoBehaviour {
 		}
 	}
 	private void HoldingBall () {
+		var rigidbody = bowlingBall.GetComponent<Rigidbody> ();
+		rigidbody.velocity = Vector3.zero;
+
+		//controlCube.SetActive (false);
 		bowlingBall.transform.rotation = Quaternion.identity;
 		var oldPosition = bowlingBall.transform.position;
 		var newPosition = controller.Position;
 
 		var delta = newPosition - oldPosition;
-		if (Deltas.Count == 15) {
+		if (Deltas.Count == 10) {
 			Deltas.RemoveAt (0);
 		}
 		Deltas.Add (delta);
@@ -210,8 +232,10 @@ public class BowlingManager : MonoBehaviour {
 	private void ClearAllObjects () {
 		foreach (Transform child in pinHolder.transform) {
 			GameObject.Destroy (child.gameObject);
-			totalObjs = 0;
 		}
+
+		totalObjs = 0;
+		holding = holdState.none;
 	}
 
 	void OnButtonDown (byte controller_id, MLInputControllerButton button) {
@@ -230,7 +254,7 @@ public class BowlingManager : MonoBehaviour {
 			// If the user presses the Home button and the menu is opened, then close the menu
 			menu.SetActive (false);
 			menuOpened = false;
-		} 
+		}
 	}
 	private void SpawnObject () {
 		// Set a limit as to how many objects can be spawned so framerate will not suffer
@@ -241,13 +265,6 @@ public class BowlingManager : MonoBehaviour {
 					Instantiate (singlePrefab, endPosition, orientationCube.transform.rotation, pinHolder);
 				} else if (holding == holdState.tenPin) {
 					Instantiate (tenPinPrefab, endPosition, tenPinOrientation.transform.rotation, pinHolder);
-				} else if (holding == holdState.ball) {
-					//Spawn ball, then set color based on PlayerPrefs value
-					// holdingBall = true;
-					// bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation, pinHolder);
-					// Transform ballObject = bowlingBall.transform.GetChild (0);
-					// Renderer ballMat = ballObject.GetComponent<Renderer> ();
-					// ballMat.material = ballMats[PlayerPrefs.GetInt ("ballColorInt", 0)];
 				}
 			} else if (noGravity) {
 				if (holding == holdState.single) {
@@ -257,7 +274,7 @@ public class BowlingManager : MonoBehaviour {
 				} else if (holding == holdState.ball) {
 					//Spawn ball, disable gravity for noGravity state, then set color based on PlayerPrefs value
 					holdingBall = true;
-					bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation, pinHolder);
+					bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation);
 					Rigidbody ballRB = bowlingBall.GetComponent<Rigidbody> ();
 					ballRB.useGravity = false;
 					Transform ballObject = bowlingBall.transform.GetChild (0);
@@ -266,27 +283,29 @@ public class BowlingManager : MonoBehaviour {
 				}
 			}
 		} else {
-			print("Too many objects");
+			// Don't spawn any objects if there are more objects than the objLimit
+			print ("Too many objects");
 		}
 		// Get a count of how many objects there are to ensure that there are not too many objects at once
-		GetCount();
+		GetCount ();
 	}
-	private void GetCount() {
+	private void GetCount () {
 		totalObjs = 0;
 		foreach (Transform bowlObj in pinHolder) {
-			Transform objectstotal = bowlObj.GetComponentInChildren<Transform>();
+			Transform objectstotal = bowlObj.GetComponentInChildren<Transform> ();
 			totalObjs += objectstotal.childCount;
 		}
 	}
-	private void CheckNewUser() {
-		if (PlayerPrefs.GetInt("hasPlayedBowling") == 1) {
-			print("Played");
+	private void CheckNewUser () {
+		if (PlayerPrefs.GetInt ("hasPlayedBowling") == 1) {
+			print ("Played");
 			tutorialActive = false;
-			tutorialMenu.SetActive(false);
+			laserLineRenderer.material = activeMat;
+			tutorialMenu.SetActive (false);
 		} else {
-			print("Not Played");
-			tutorialMenu.SetActive(true);
-			PlayerPrefs.SetInt("hasPlayedBowling", 1);
+			print ("Not Played");
+			tutorialMenu.SetActive (true);
+			PlayerPrefs.SetInt ("hasPlayedBowling", 1);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 Lumin
 PlayerPath?
-C:/Users/topdu/Desktop/Compete/Compete_Private.mpk
+C:/Users/MPCR Lab/Desktop/Compete/Compete_Release.mpk
 SceneListBegin?
 Assets/Scenes/Main.unity
 Assets/Scenes/Bowling.unity
@@ -164,7 +164,7 @@ b070c608a2c3037a3af830af58b00d9b Assembly-CSharp.dll:MagicLeap.DestroyAfterTime
 cb11bad297ab0b4271df38fdade7ef07 Assembly-CSharp.dll:MagicLeap.ImageTrackingVisualizer
 7c6cfca53c94c1ede60129ec50d74252 Assembly-CSharp.dll:MagicLeap.ImageTrackingExample
 8234eb6652149e31d76420b6f5205093 Assembly-CSharp.dll:MagicLeap.KeyPoseVisualizer
-09e70cc7ce1871b1c176e7c01b1e79e7 Assembly-CSharp.dll:.BowlingManager
+5d78995449103c5637e6d6a6ffa73b07 Assembly-CSharp.dll:.BowlingManager
 c51003c9192e8c26fa1b5347c6106b74 Assembly-CSharp.dll:MagicLeap.PlacementObject
 a814b880ff4f40c17dfbb0350c7828a2 Assembly-CSharp.dll:MagicLeap.ControllerVisualizer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu

@@ -143,6 +143,7 @@
      <Compile Include="Assets\Scripts\Darts\DartMenuCollide.cs" />
      <Compile Include="Assets\Scripts\Darts\DartsManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Golf\GolfManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <None Include="Assets\MagicLeap\BackgroundMusicExample\readme.txt" />

@@ -114,6 +114,7 @@ public class DartsManager : MonoBehaviour {
 				tutorialMenu.SetActive(true);
 				tutorialBumperPressed = false;
 				tutorialHomePressed = false;
+				laserLineRenderer.material = transparent;
 				PlayerPrefs.SetInt("hasPlayedDarts", 0);
 				CheckNewUser();
 			} else if (rayHit.transform.gameObject.name == "NoGravity" && controller.TriggerValue >= 0.9f) {
@@ -190,7 +191,7 @@ public class DartsManager : MonoBehaviour {
 			toAverage += toAdd;
 		}
 		toAverage /= Deltas.Count;
-		var forcePerSecondAvg = toAverage * 250;
+		var forcePerSecondAvg = toAverage * 400;
 		forcePerSecond = forcePerSecondAvg;
 		dart.transform.position = controller.Position;
 		dart.transform.rotation = controller.Orientation;
@@ -242,6 +243,7 @@ public class DartsManager : MonoBehaviour {
 		if (PlayerPrefs.GetInt("hasPlayedDarts") == 1) {
 			print("Played");
 			tutorialActive = false;
+			laserLineRenderer.material = activeMat;
 			tutorialMenu.SetActive(false);
 		} else {
 			print("Not Played");

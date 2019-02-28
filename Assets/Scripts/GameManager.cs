@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour {
 			} else if (rayHit.collider.name == "Dartboard" && controller.TriggerValue >= 0.9f) {
 				// If the dartboard is being pointed at and the trigger is held, load the darts scene
 				SceneManager.LoadScene("Darts", LoadSceneMode.Single);
+			}  else if (rayHit.collider.name == "Golf" && controller.TriggerValue >= 0.9f) {
+				SceneManager.LoadScene("Golf", LoadSceneMode.Single);
 			} else if (rayHit.collider.name == "PrivacyPolicy" && controller.TriggerValue >= 0.9f) {
 				mainMenu.SetActive(false);
 				privacyPolicyMenu.SetActive(true);

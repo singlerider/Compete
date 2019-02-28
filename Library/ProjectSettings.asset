@@ -156,7 +156,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Lumin: com.keyloftstudios.compete
+    Lumin: com.leapahead.compete
     Standalone: com.Company.ProductName
   buildNumber: {}
   AndroidBundleVersionCode: 1
@@ -661,20 +661,18 @@ PlayerSettings:
     UNet: 1
   luminIcon:
     m_Name: 
-    m_ModelFolderPath: C:/Users/topdu/Downloads/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/Icon/BowlingIcon/Icon/Model
-    m_PortalFolderPath: C:/Users/topdu/Downloads/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/ML_Sports-50177d6e11e4ae0925148bd2a80bdc4e9d6a7549/Icon/BowlingIcon/Icon/Portal
+    m_ModelFolderPath: C:/Users/MPCR Lab/Desktop/Compete/Icon/BowlingIcon/Icon/Model
+    m_PortalFolderPath: C:/Users/MPCR Lab/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: C:/Users/topdu/Downloads/PrivateMLWorld/PrivateMLWorld/ml-sports-cd8f2512.cert
+    m_CertPath: C:/Users/MPCR Lab/Downloads/ReleaseKey/compete-6780d143.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:
-    m_VersionCode: 8
-    m_VersionName: 
+    m_VersionCode: 1
+    m_VersionName: Compete_Beta
   luminPrivilege:
   - ControllerPose
   - WorldReconstruction
-  - Internet
-  - LocalAreaNetwork
   luminMinimumPlatformAPILevel: 3
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
