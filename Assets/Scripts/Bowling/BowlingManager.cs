@@ -265,6 +265,9 @@ public class BowlingManager : MonoBehaviour {
 					Instantiate (singlePrefab, endPosition, orientationCube.transform.rotation, pinHolder);
 				} else if (holding == holdState.tenPin) {
 					Instantiate (tenPinPrefab, endPosition, tenPinOrientation.transform.rotation, pinHolder);
+				} else if (holding == holdState.ball) {
+					Rigidbody ballRB = bowlingBall.GetComponent<Rigidbody> ();
+					ballRB.useGravity = false;
 				}
 			} else if (noGravity) {
 				if (holding == holdState.single) {
@@ -272,15 +275,19 @@ public class BowlingManager : MonoBehaviour {
 				} else if (holding == holdState.tenPin) {
 					Instantiate (tenPinNoGravityPrefab, endPosition, tenPinOrientation.transform.rotation, pinHolder);
 				} else if (holding == holdState.ball) {
-					//Spawn ball, disable gravity for noGravity state, then set color based on PlayerPrefs value
-					holdingBall = true;
-					bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation);
 					Rigidbody ballRB = bowlingBall.GetComponent<Rigidbody> ();
 					ballRB.useGravity = false;
-					Transform ballObject = bowlingBall.transform.GetChild (0);
-					Renderer ballMat = ballObject.GetComponent<Renderer> ();
-					ballMat.material = ballMats[PlayerPrefs.GetInt ("ballColorInt", 0)];
 				}
+				//  else if (holding == holdState.ball) {
+				// 	//Spawn ball, disable gravity for noGravity state, then set color based on PlayerPrefs value
+				// 	holdingBall = true;
+				// 	bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation);
+				// 	Rigidbody ballRB = bowlingBall.GetComponent<Rigidbody> ();
+				// 	ballRB.useGravity = false;
+				// 	Transform ballObject = bowlingBall.transform.GetChild (0);
+				// 	Renderer ballMat = ballObject.GetComponent<Renderer> ();
+				// 	ballMat.material = ballMats[PlayerPrefs.GetInt ("ballColorInt", 0)];
+				// }
 			}
 		} else {
 			// Don't spawn any objects if there are more objects than the objLimit

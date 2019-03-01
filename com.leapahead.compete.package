@@ -2,7 +2,7 @@
 
 
 USES = \
-	"C:\Users\MPCR Lab\Desktop\Compete\Temp/StagingArea\assets" \
+	C:\Users\topdu\Desktop\Compete\Temp/StagingArea\assets \
 
 
 ######### DO NOT EDIT ABOVE #########
