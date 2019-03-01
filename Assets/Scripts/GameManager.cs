@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	private MLInputController controller;
 	public LineRenderer laserLineRenderer;
-	public GameObject control, mainMenu, privacyPolicyMenu;
+	public GameObject control, mainMenu, privacyPolicyMenu, joinLobby, exitLobby;
 	// Use this for initialization
 	void Start () {
 		// Start Magic Leap controller input
@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour {
 				privacyPolicyMenu.SetActive(false);
 			} else if (rayHit.collider.name == "ExitGame" && controller.TriggerValue >= 0.9f) {
 				Application.Quit();
+			} else if (rayHit.collider.name == "JoinLobby" && controller.TriggerValue >= 0.9f) {
+				PhotonLobby.OnBattleButtonClicked();
+			} else if (rayHit.collider.name == "ExitLobby" && controller.TriggerValue >= 0.9f) {
+				PhotonLobby.OnCancelButtonClicked();
 			}
 		} else {
 			// If no object is hit, make the length of the line 3 meters out from the controller
