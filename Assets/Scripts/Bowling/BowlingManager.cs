@@ -21,7 +21,10 @@ public class BowlingManager : MonoBehaviour {
 
 	public static holdState holding = holdState.single;
 	public static menuState currentMenuState;
+
 	private MLInputController controller;
+	public MLPersistentBehavior persistentBehavior;
+
 	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube;
 	public static GameObject menuControl;
 	private GameObject bowlingBall;
@@ -37,6 +40,7 @@ public class BowlingManager : MonoBehaviour {
 	public static string ballColor;
 	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false;
 	private static bool menuClosed = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -295,6 +299,7 @@ public class BowlingManager : MonoBehaviour {
 		}
 		// Get a count of how many objects there are to ensure that there are not too many objects at once
 		GetCount ();
+		persistentBehavior.UpdateBinding();
 	}
 	private void GetCount () {
 		totalObjs = 0;

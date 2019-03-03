@@ -65,9 +65,9 @@ public class GameManager : MonoBehaviour {
 			} else if (rayHit.collider.name == "ExitGame" && controller.TriggerValue >= 0.9f) {
 				Application.Quit();
 			} else if (rayHit.collider.name == "JoinLobby" && controller.TriggerValue >= 0.9f) {
-				PhotonLobby.OnBattleButtonClicked();
+				//PhotonLobby.OnBattleButtonClicked();
 			} else if (rayHit.collider.name == "ExitLobby" && controller.TriggerValue >= 0.9f) {
-				PhotonLobby.OnCancelButtonClicked();
+				//PhotonLobby.OnCancelButtonClicked();
 			}
 		} else {
 			// If no object is hit, make the length of the line 3 meters out from the controller
