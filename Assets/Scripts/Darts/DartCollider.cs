@@ -17,6 +17,7 @@ public class DartCollider : MonoBehaviour {
 		
 	}
 	private void OnCollisionEnter(Collision other) {
+		dartRB.velocity = Vector3.zero;
 		dartRB.isKinematic = true;
 		dartAudio.Play();
 		print("Playsound");

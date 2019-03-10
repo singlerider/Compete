@@ -19,9 +19,9 @@ public class DartsManager : MonoBehaviour {
 	public Material[] dartMats;
 	public LineRenderer laserLineRenderer;
 	private Vector3 endPosition, forcePerSecond;
-	private float timeHold = 3.0f, totalObjs = 0, objLimit = 50;
+	private float timeHold = 3.0f, totalObjs = 0, objLimit = 15;
 	private Controller checkController;
-	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false, movingDartboard = true;
+	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, movingDartboard = true;
 	private static bool menuClosed = false, menuOpened = false;
 	public static bool lockedDartboard = false;
 	List<Vector3> Deltas = new List<Vector3> ();
@@ -52,8 +52,7 @@ public class DartsManager : MonoBehaviour {
 			SetLine ();
 			PlaceObject ();
 		} else {
-			if ((controller.Touch1Active || controller.TriggerValue >= 0.9f || tutorialBumperPressed || tutorialHomePressed) && tutorialMenuOpened == false) {
-				laserLineRenderer.material = activeMat;
+			if (controller.Touch1Active || controller.TriggerValue >= 0.2f || tutorialBumperPressed || tutorialHomePressed) {
 				CheckNewUser();
 			}
 		}
@@ -63,6 +62,8 @@ public class DartsManager : MonoBehaviour {
 			}
 			if (setHand == false) {
 				setHand = true;
+				// Vector3[] zero = new Vector3[2] { Vector3.zero, Vector3.zero };
+				// laserLineRenderer.SetPositions (zero);
 
 				menuControl.transform.position = controller.Position;
 				menuControl.transform.rotation = mainCam.transform.rotation;
@@ -75,9 +76,6 @@ public class DartsManager : MonoBehaviour {
 		}
 		if (checkController.bumperTimer.getTime () >= timeHold) {
 			ClearAllObjects ();
-		}
-		if (controller.TriggerValue <= 0.2f && tutorialMenuOpened == true) {
-			tutorialMenuOpened = false;
 		}
 	}
 	private void SetLine () {
@@ -104,19 +102,6 @@ public class DartsManager : MonoBehaviour {
 				modifierMenu.SetActive(true);
 				menu.SetActive(false);
 				menuClosed = true;
-			}  else if (rayHit.transform.gameObject.name == "Tutorial" && controller.TriggerValue >= 0.9f) {
-				menuClosed = true;
-				menuOpened = false;
-				menu.SetActive(false);
-				holding = holdState.none;
-				tutorialActive = true;
-				tutorialMenuOpened = true;
-				tutorialMenu.SetActive(true);
-				tutorialBumperPressed = false;
-				tutorialHomePressed = false;
-				laserLineRenderer.material = transparent;
-				PlayerPrefs.SetInt("hasPlayedDarts", 0);
-				CheckNewUser();
 			} else if (rayHit.transform.gameObject.name == "NoGravity" && controller.TriggerValue >= 0.9f) {
 				if (noGravity) {
 					noGravity = false;
@@ -154,13 +139,13 @@ public class DartsManager : MonoBehaviour {
 				rigidbody.velocity = forcePerSecond;
 			}
 		} else if (holding == holdState.dartboard) {
-			print("hmm");
+			
 			dartboardHolder.SetActive(true);
 			if (controller.TriggerValue >= 0.9f) {
 				if (!lockedDartboard) {
 					print("Should see dartboard");
 					movingDartboard = false;
-					var dartboardCollider = dartboard.GetComponent<BoxCollider> ();
+					var dartboardCollider = dartboard.GetComponent<MeshCollider> ();
 					dartboardCollider.enabled = true;
 					lockedDartboard = true;
 				}
@@ -168,12 +153,14 @@ public class DartsManager : MonoBehaviour {
 				if (movingDartboard) {
 					dartboardHolder.transform.position = endPosition;
 					dartboardHolder.transform.rotation = Quaternion.LookRotation (-mainCam.transform.up, -mainCam.transform.forward);
+					var dartboardCollider = dartboard.GetComponent<MeshCollider> ();
+					dartboardCollider.enabled = false;
 					lockedDartboard = false;
 				} else {
 					laserLineRenderer.material = transparent;
 				}
 			}
-		} else if (holding == holdState.none && tutorialMenuOpened == false) {
+		} else if (holding == holdState.none) {
 			laserLineRenderer.material = activeMat;
 		}
 	}
@@ -191,7 +178,7 @@ public class DartsManager : MonoBehaviour {
 			toAverage += toAdd;
 		}
 		toAverage /= Deltas.Count;
-		var forcePerSecondAvg = toAverage * 400;
+		var forcePerSecondAvg = toAverage * 250;
 		forcePerSecond = forcePerSecondAvg;
 		dart.transform.position = controller.Position;
 		dart.transform.rotation = controller.Orientation;
@@ -207,7 +194,12 @@ public class DartsManager : MonoBehaviour {
 					dartRender.material = dartMats[PlayerPrefs.GetInt("dartColorInt", 0)];
 				}
 			}
+		} else {
+			GameObject.Destroy(dart);
+			print("Too many objects, destroyed last dart");
 		}
+		// Recount the total number of darts currently in the game to ensure that there are never too many on screen (by objLimit)
+		GetCount();
 	}
 
 	void OnButtonDown (byte controller_id, MLInputControllerButton button) {
@@ -228,22 +220,25 @@ public class DartsManager : MonoBehaviour {
 		foreach (Transform child in dartHolder) {
 			GameObject.Destroy(child.gameObject);
 		}
+		totalObjs = 0;
+		holding = holdState.none;
 	}
 	public static void CloseMenu () {
 		print ("Close the menu");
 		menuClosed = true;
 		menuControl.SetActive (false);
 	}
-	private void GetCount() {
+	private void GetCount () {
+		totalObjs = 0;
 		foreach (Transform dartObj in dartHolder) {
-			totalObjs += 1;
+			Transform objectstotal = dartObj.GetComponentInChildren<Transform> ();
+			totalObjs += objectstotal.childCount;
 		}
 	}
 	private void CheckNewUser() {
 		if (PlayerPrefs.GetInt("hasPlayedDarts") == 1) {
 			print("Played");
 			tutorialActive = false;
-			laserLineRenderer.material = activeMat;
 			tutorialMenu.SetActive(false);
 		} else {
 			print("Not Played");

@@ -299,7 +299,8 @@ public class BowlingManager : MonoBehaviour {
 		}
 		// Get a count of how many objects there are to ensure that there are not too many objects at once
 		GetCount ();
-		persistentBehavior.UpdateBinding();
+		// TODO: Finish adding persistient behaviour to bowling and eventually darts
+		//persistentBehavior.UpdateBinding();
 	}
 	private void GetCount () {
 		totalObjs = 0;
