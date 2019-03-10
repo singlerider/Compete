@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	private MLInputController controller;
 	public LineRenderer laserLineRenderer;
-	public GameObject control, mainMenu, privacyPolicyMenu, joinLobby, exitLobby;
+	public GameObject control, mainMenu, privacyPolicyMenu, joinLobby, exitLobby, quitMenu;
 	// Use this for initialization
 	void Start () {
 		// Start Magic Leap controller input
@@ -63,19 +63,28 @@ public class GameManager : MonoBehaviour {
 				mainMenu.SetActive(true);
 				privacyPolicyMenu.SetActive(false);
 			} else if (rayHit.collider.name == "ExitGame" && controller.TriggerValue >= 0.9f) {
-				Application.Quit();
+				//Application.Quit();
+				quitMenu.SetActive(true);
+				mainMenu.SetActive(false);
 			} else if (rayHit.collider.name == "JoinLobby" && controller.TriggerValue >= 0.9f) {
 				//PhotonLobby.OnBattleButtonClicked();
 			} else if (rayHit.collider.name == "ExitLobby" && controller.TriggerValue >= 0.9f) {
 				//PhotonLobby.OnCancelButtonClicked();
-			}
+			} else if ((rayHit.collider.name == "ConfirmExit" || rayHit.collider.name == "LeaveGame") && controller.TriggerValue >= 0.9f) {
+				Application.Quit();
+			} else if ((rayHit.collider.name == "StayInGame" || rayHit.collider.name == "ContinuePlaying") && controller.TriggerValue >= 0.9f) {
+				quitMenu.SetActive(false);
+				mainMenu.SetActive(true);
+			)
 		} else {
 			// If no object is hit, make the length of the line 3 meters out from the controller
 			Vector3 endPosition = controller.Position + (control.transform.forward * 3.0f);
 			laserLineRenderer.SetPosition(1, endPosition);
 		}
 	}
-	public static void CloseMenu() {
+	//public static void CloseMenu() {
 		
-	}
+	//}
+
+
 }
