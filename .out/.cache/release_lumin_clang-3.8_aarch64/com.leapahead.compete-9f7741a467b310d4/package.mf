@@ -174,7 +174,7 @@
   },
   {
    "compression": 8,
-   "hash": "d85d53db3391b99a99cf512c589d07ffa9343477",
+   "hash": "34ae33d184fef65d07759918ec8acdc6a51f894f",
    "pkgpath": "Data/globalgamemanagers",
    "size": 37488,
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Data/globalgamemanagers"
@@ -307,9 +307,9 @@
   },
   {
    "compression": 8,
-   "hash": "74e83ef31c9a2be9744edd60ed7b11673fcda171",
+   "hash": "b980b821c9ce9261d6fa2172d0a3eefdae8034d3",
    "pkgpath": "Icon/Model/model.png",
-   "size": 17136,
+   "size": 3924,
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Icon/Model/model.png"
   },
   {

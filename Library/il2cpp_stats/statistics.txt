@@ -11,7 +11,7 @@
 
 ----- il2cpp Statistics -----
 General:
-	Conversion Time: 13.586 s
+	Conversion Time: 13.687 s
 	Files Written: 137
 	String Literals: 5720
 Methods:
@@ -80,53 +80,53 @@ Compilation:
 
 
 ----Assembly Conversion Times----
-	Convert Assembly-CSharp (294.031036376953ms)
-	Convert LuminUnity (471.781616210938ms)
-	Convert Mono.Security (270.794128417969ms)
-	Convert MSA.Runtime (28.8330230712891ms)
-	Convert mscorlib (2196.92358398438ms)
-	Convert System (849.962707519531ms)
-	Convert System.Configuration (98.3442764282227ms)
-	Convert System.Core (33.0525932312012ms)
-	Convert System.Xml (780.156616210938ms)
-	Convert Unity.XR.MagicLeap (33.8844947814941ms)
-	Convert UnityEngine (0.506625950336456ms)
-	Convert UnityEngine.AIModule (1.77937662601471ms)
-	Convert UnityEngine.Analytics (29.1417045593262ms)
-	Convert UnityEngine.AnimationModule (12.9538135528564ms)
-	Convert UnityEngine.ARModule (2.79624938964844ms)
-	Convert UnityEngine.AssetBundleModule (2.37441325187683ms)
-	Convert UnityEngine.AudioModule (26.6260757446289ms)
-	Convert UnityEngine.CoreModule (270.973388671875ms)
-	Convert UnityEngine.DirectorModule (1.6601881980896ms)
-	Convert UnityEngine.GridModule (1.31710684299469ms)
-	Convert UnityEngine.ImageConversionModule (1.06334125995636ms)
-	Convert UnityEngine.IMGUIModule (52.8616981506348ms)
-	Convert UnityEngine.InputModule (4.42867755889893ms)
-	Convert UnityEngine.JSONSerializeModule (1.13183677196503ms)
-	Convert UnityEngine.Physics2DModule (10.2725276947021ms)
-	Convert UnityEngine.PhysicsModule (12.5748243331909ms)
-	Convert UnityEngine.SharedInternalsModule (12.2510547637939ms)
-	Convert UnityEngine.SpatialTracking (14.2479877471924ms)
-	Convert UnityEngine.StandardEvents (6.33840703964233ms)
-	Convert UnityEngine.TerrainModule (1.38982677459717ms)
-	Convert UnityEngine.TextRenderingModule (14.3044137954712ms)
-	Convert UnityEngine.TilemapModule (5.87492990493774ms)
-	Convert UnityEngine.UI (746.268188476563ms)
-	Convert UnityEngine.UIElementsModule (2.95104336738586ms)
-	Convert UnityEngine.UIModule (13.6644172668457ms)
-	Convert UnityEngine.UnityAnalyticsModule (8.9487829208374ms)
-	Convert UnityEngine.UnityConnectModule (4.72287654876709ms)
-	Convert UnityEngine.UnityWebRequestModule (24.8985996246338ms)
-	Convert UnityEngine.VideoModule (8.60298538208008ms)
-	Convert UnityEngine.VRModule (4.575927734375ms)
-	Convert UnityEngine.XRModule (20.1165809631348ms)
+	Convert Assembly-CSharp (301.921325683594ms)
+	Convert LuminUnity (461.109283447266ms)
+	Convert Mono.Security (271.69091796875ms)
+	Convert MSA.Runtime (34.6738548278809ms)
+	Convert mscorlib (2238.57348632813ms)
+	Convert System (855.229248046875ms)
+	Convert System.Configuration (98.711799621582ms)
+	Convert System.Core (32.7312355041504ms)
+	Convert System.Xml (800.514892578125ms)
+	Convert Unity.XR.MagicLeap (24.3325309753418ms)
+	Convert UnityEngine (0.454424470663071ms)
+	Convert UnityEngine.AIModule (1.17860686779022ms)
+	Convert UnityEngine.Analytics (30.6896457672119ms)
+	Convert UnityEngine.AnimationModule (12.8276853561401ms)
+	Convert UnityEngine.ARModule (3.21386122703552ms)
+	Convert UnityEngine.AssetBundleModule (2.32462573051453ms)
+	Convert UnityEngine.AudioModule (26.9281215667725ms)
+	Convert UnityEngine.CoreModule (260.108215332031ms)
+	Convert UnityEngine.DirectorModule (1.6282035112381ms)
+	Convert UnityEngine.GridModule (1.29870057106018ms)
+	Convert UnityEngine.ImageConversionModule (0.840655148029327ms)
+	Convert UnityEngine.IMGUIModule (53.1160697937012ms)
+	Convert UnityEngine.InputModule (4.60610198974609ms)
+	Convert UnityEngine.JSONSerializeModule (1.09110152721405ms)
+	Convert UnityEngine.Physics2DModule (10.7722139358521ms)
+	Convert UnityEngine.PhysicsModule (12.27308177948ms)
+	Convert UnityEngine.SharedInternalsModule (12.3660182952881ms)
+	Convert UnityEngine.SpatialTracking (14.2057437896729ms)
+	Convert UnityEngine.StandardEvents (3.95343255996704ms)
+	Convert UnityEngine.TerrainModule (1.3367201089859ms)
+	Convert UnityEngine.TextRenderingModule (14.7015066146851ms)
+	Convert UnityEngine.TilemapModule (5.39606428146362ms)
+	Convert UnityEngine.UI (763.74365234375ms)
+	Convert UnityEngine.UIElementsModule (3.53582072257996ms)
+	Convert UnityEngine.UIModule (13.4329805374146ms)
+	Convert UnityEngine.UnityAnalyticsModule (8.428879737854ms)
+	Convert UnityEngine.UnityConnectModule (4.77809524536133ms)
+	Convert UnityEngine.UnityWebRequestModule (24.0401420593262ms)
+	Convert UnityEngine.VideoModule (8.66001510620117ms)
+	Convert UnityEngine.VRModule (4.73072195053101ms)
+	Convert UnityEngine.XRModule (19.7538871765137ms)
 
 ----Misc Timing----
-	PreProcessStage: 299.470581054688
+	PreProcessStage: 304.194946289063
 	GenericsCollector.Collect: None
-	WriteGenerics: 2647.8203125
-	AllAssemblyConversion: 6380.30224609375
+	WriteGenerics: 2668.75634765625
+	AllAssemblyConversion: 6446.86767578125
 
 ----Generated Files----
 Bulk_Assembly-CSharp_0.cpp	2293711
