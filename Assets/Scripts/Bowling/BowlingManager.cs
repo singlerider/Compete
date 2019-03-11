@@ -29,16 +29,17 @@ public class BowlingManager : MonoBehaviour {
 	public static GameObject menuControl;
 	private GameObject bowlingBall;
 	public Material transparent, activeMat;
-	public Material[] ballMats;
-	public Transform singlePrefab, tenPinPrefab, pinHolder, singleNoGravityPrefab, tenPinNoGravityPrefab;
+	public Material[] ballMats, meshMats;
+	public Transform singlePrefab, tenPinPrefab, pinHolder, singleNoGravityPrefab, tenPinNoGravityPrefab, meshHolder;
 	public LineRenderer laserLineRenderer;
+	public MeshRenderer mesh;
 	private Vector3 endPosition, forcePerSecond;
 	List<Vector3> Deltas = new List<Vector3> ();
 	private float timeHold = 3.0f, totalObjs = 0, objLimit = 50;
 	private Controller checkController;
 	public static float growSpeed;
 	public static string ballColor;
-	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false;
+	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false, settingsOpened = false, occlusionActive = true;
 	private static bool menuClosed = false;
 
 
@@ -119,6 +120,11 @@ public class BowlingManager : MonoBehaviour {
 			// If the ray hits an object, set the line's end position to the distance between the controller and that point
 			endPosition = controller.Position + (control.transform.forward * rayHit.distance);
 			laserLineRenderer.SetPosition (1, endPosition);
+
+			if (settingsOpened && controller.TriggerValue <= 0.2f)  {
+				settingsOpened = false;
+			}
+
 			if (rayHit.transform.gameObject.name == "Home" && controller.TriggerValue >= 0.9f) {
 				SceneManager.LoadScene ("Main", LoadSceneMode.Single);
 			} else if (rayHit.transform.gameObject.name == "ChangeBall" && controller.TriggerValue >= 0.9f) {
@@ -152,7 +158,28 @@ public class BowlingManager : MonoBehaviour {
 				} else {
 					noGravity = true;
 				}
+				menuClosed = true;
 				modifierMenu.SetActive (false);
+			} else if (rayHit.transform.gameObject.name == "ShowMesh" && controller.TriggerValue >= 0.9f) {
+				if (!settingsOpened) {
+					if (occlusionActive) {
+						foreach (Transform child in meshHolder) {
+							var objectRender = child.GetComponent<MeshRenderer>();
+							objectRender.material = meshMats[1];
+						}
+						mesh.material = meshMats[1];
+						occlusionActive = false;
+					} else {
+						foreach (Transform child in meshHolder) {
+							var objectRender = child.GetComponent<MeshRenderer>();
+							objectRender.material = meshMats[0];
+						}
+						mesh.material = meshMats[0];
+						occlusionActive = true;
+					}
+					modifierMenu.SetActive(false);
+					menuClosed = true;
+				}
 			}
 			if (!holdingBallMenu) {
 				BowlingColorLoader.GetBallColor (rayHit, controller, ballMenu, ballMenuOpened, holdingBallMenu, bowlingBall, ballMats);

@@ -12,16 +12,17 @@ public class DartsManager : MonoBehaviour {
 	public static holdState holding = holdState.none;
 	private MLInputController controller;
 	public GameObject mainCam, control, dartPrefab, dartboardHolder, menu, modifierMenu, tutorialMenu, dartMenu, dartboard;
-	public Transform dartHolder;
+	public Transform dartHolder, meshHolder;
 	public static GameObject menuControl;
 	private GameObject dart;
 	public Material transparent, activeMat;
-	public Material[] dartMats;
+	public Material[] dartMats, meshMats;
 	public LineRenderer laserLineRenderer;
+	public MeshRenderer mesh;
 	private Vector3 endPosition, forcePerSecond;
 	private float timeHold = 3.0f, totalObjs = 0, objLimit = 15;
 	private Controller checkController;
-	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, movingDartboard = true;
+	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, movingDartboard = true, settingsOpened = false, occlusionActive = true, tutorialMenuOpened = false;
 	private static bool menuClosed = false, menuOpened = false;
 	public static bool lockedDartboard = false;
 	List<Vector3> Deltas = new List<Vector3> ();
@@ -52,7 +53,7 @@ public class DartsManager : MonoBehaviour {
 			SetLine ();
 			PlaceObject ();
 		} else {
-			if (controller.Touch1Active || controller.TriggerValue >= 0.2f || tutorialBumperPressed || tutorialHomePressed) {
+			if ((controller.Touch1Active || controller.TriggerValue >= 0.2f || tutorialBumperPressed || tutorialHomePressed) && tutorialMenuOpened == false) {
 				CheckNewUser();
 			}
 		}
@@ -77,6 +78,9 @@ public class DartsManager : MonoBehaviour {
 		if (checkController.bumperTimer.getTime () >= timeHold) {
 			ClearAllObjects ();
 		}
+		if (controller.TriggerValue <= 0.2f && tutorialMenuOpened == true) {
+			tutorialMenuOpened = false;
+		}
 	}
 	private void SetLine () {
 		RaycastHit rayHit;
@@ -87,6 +91,11 @@ public class DartsManager : MonoBehaviour {
 		if (Physics.Raycast (controller.Position, heading, out rayHit, 10.0f)) {
 			endPosition = controller.Position + (control.transform.forward * rayHit.distance);
 			laserLineRenderer.SetPosition (1, endPosition);
+
+			if (settingsOpened && controller.TriggerValue <= 0.2f) {
+				settingsOpened = false;
+			}
+
 			if (rayHit.transform.gameObject.name == "Home" && controller.TriggerValue >= 0.9f) {
 				SceneManager.LoadScene("Main", LoadSceneMode.Single);
 			} else if (rayHit.transform.gameObject.name == "ChangeDart" && controller.TriggerValue >= 0.9f) {
@@ -102,13 +111,50 @@ public class DartsManager : MonoBehaviour {
 				modifierMenu.SetActive(true);
 				menu.SetActive(false);
 				menuClosed = true;
+				settingsOpened = true;
+			} else if (rayHit.transform.gameObject.name == "Tutorial" && controller.TriggerValue >= 0.9f) {
+				menuClosed = true;
+				menuOpened = false;
+				menu.SetActive (false);
+				holding = holdState.none;
+				tutorialActive = true;
+				tutorialMenuOpened = true;
+				tutorialMenu.SetActive (true);
+				tutorialBumperPressed = false;
+				tutorialHomePressed = false;
+				laserLineRenderer.material = transparent;
+				PlayerPrefs.SetInt ("hasPlayedDarts", 0);
+				CheckNewUser ();
 			} else if (rayHit.transform.gameObject.name == "NoGravity" && controller.TriggerValue >= 0.9f) {
-				if (noGravity) {
-					noGravity = false;
-				} else {
-					noGravity = true;
+				if (!settingsOpened) {
+					if (noGravity) {
+						noGravity = false;
+					} else {
+						noGravity = true;
+					}
+					modifierMenu.SetActive(false);
+					menuClosed = true;
 				}
-				modifierMenu.SetActive(false);
+			} else if (rayHit.transform.gameObject.name == "ShowMesh" && controller.TriggerValue >= 0.9f) {
+				if (!settingsOpened) {
+					if (occlusionActive) {
+						foreach (Transform child in meshHolder) {
+							var objectRender = child.GetComponent<MeshRenderer>();
+							objectRender.material = meshMats[1];
+						}
+						mesh.material = meshMats[1];
+						occlusionActive = false;
+					} else {
+						foreach (Transform child in meshHolder) {
+							var objectRender = child.GetComponent<MeshRenderer>();
+							objectRender.material = meshMats[0];
+						}
+						mesh.material = meshMats[0];
+						occlusionActive = true;
+					}
+					modifierMenu.SetActive(false);
+					menuClosed = true;
+				}
 			}
 			if (!holdingDartMenu) {
 				DartColorLoader.GetDartColor(rayHit.transform.gameObject.name, controller, dartMenu, dartMenuOpened, holdingDartMenu, dart, dartMats);
@@ -160,7 +206,7 @@ public class DartsManager : MonoBehaviour {
 					laserLineRenderer.material = transparent;
 				}
 			}
-		} else if (holding == holdState.none) {
+		} else if (holding == holdState.none && tutorialMenuOpened == false) {
 			laserLineRenderer.material = activeMat;
 		}
 	}
@@ -193,6 +239,15 @@ public class DartsManager : MonoBehaviour {
 					Renderer dartRender = dartChild.GetComponent<Renderer>();
 					dartRender.material = dartMats[PlayerPrefs.GetInt("dartColorInt", 0)];
 				}
+			} else {
+				if (holding == holdState.dart) {
+					dart = Instantiate (dartPrefab, controller.Position, controller.Orientation, dartHolder);
+					Transform dartChild = dart.gameObject.transform.GetChild(0);
+					Renderer dartRender = dartChild.GetComponent<Renderer>();
+					Rigidbody dartRB = dartChild.GetComponent<Rigidbody>();
+					dartRB.useGravity = false;
+					dartRender.material = dartMats[PlayerPrefs.GetInt("dartColorInt", 0)];
+				}
 			}
 		} else {
 			GameObject.Destroy(dart);
@@ -211,9 +266,11 @@ public class DartsManager : MonoBehaviour {
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == false) {
 			menuOpened = true;
 			menu.SetActive (true);
+			modifierMenu.SetActive(false);
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == true) {
 			menuOpened = false;
 			menu.SetActive (true);
+			modifierMenu.SetActive(false);
 		}
 	}
 	private void ClearAllObjects () {

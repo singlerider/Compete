@@ -65,7 +65,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 f482ebc3d17d733cc1c840f8d62e2f76 Assembly-CSharp.dll:MagicLeap.PCFVisualizer
-f1be73887c15f7e08d7db0248248ec79 Assembly-CSharp.dll:.GameManager
+b04368efec794dfdb55d9773a92e2205 Assembly-CSharp.dll:.GameManager
 5df5313c7b8c057117cf2a537bffebf9 Assembly-CSharp.dll:MagicLeap.VideoCaptureVisualizer
 adff8376e3cc1a0fbfd9942f3552bdbd Assembly-CSharp.dll:.MultiplayerSettings
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -247,4 +247,4 @@ b0b280965cfc4ea6ff1605a3f13debaa Assembly-CSharp.dll:.MeshingMenu
 66eb4003e71585f0ef4c23034c2aa3b2 Assembly-CSharp.dll:MagicLeap.VirtualPointer
 08a92322e38205b685c92fa359d21d7a Assembly-CSharp.dll:MagicLeap.MeshingVisualizer
 2c832bb50381ee4d40b2f62c67f06a67 Assembly-CSharp.dll:MagicLeap.DeepSeaExplorerLauncher
-db55d01a29df0e0982e31eaffd6d542b Assembly-CSharp.dll:.DartsManager
+770fdc53a4d25df83c02b831c68714cd Assembly-CSharp.dll:.DartsManager
