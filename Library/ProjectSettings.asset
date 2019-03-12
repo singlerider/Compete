@@ -663,14 +663,14 @@ PlayerSettings:
     UNet: 1
   luminIcon:
     m_Name: 
-    m_ModelFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Model
-    m_PortalFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
+    m_ModelFolderPath: C:/Users/MPCR Lab/Desktop/Compete/Icon/BowlingIcon/Icon/Model
+    m_PortalFolderPath: C:/Users/MPCR Lab/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: C:/Users/topdu/Downloads/privatekey/homedesktop.cert
+    m_CertPath: C:/Users/MPCR Lab/Downloads/privatekey (1)/mpcrpc.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:
-    m_VersionCode: 10
+    m_VersionCode: 11
     m_VersionName: Compete_Beta
   luminPrivilege:
   - ControllerPose
