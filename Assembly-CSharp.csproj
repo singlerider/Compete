@@ -135,6 +135,7 @@
      <Compile Include="Assets\Scripts\Bowling\BallVelocity.cs" />
      <Compile Include="Assets\Scripts\Bowling\BowlingColorLoader.cs" />
      <Compile Include="Assets\Scripts\Bowling\BowlingManager.cs" />
+     <Compile Include="Assets\Scripts\Bowling\BowlingPlaceObject.cs" />
      <Compile Include="Assets\Scripts\Bowling\MenuCollide.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\Darts\DartCollider.cs" />
@@ -144,10 +145,6 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Golf\GolfManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\Meshing\MeshingMenu.cs" />
-     <Compile Include="Assets\Scripts\Photon\MultiplayerSettings.cs" />
-     <Compile Include="Assets\Scripts\Photon\PhotonLobby.cs" />
-     <Compile Include="Assets\Scripts\Photon\PhotonRoom.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <None Include="Assets\MagicLeap\BackgroundMusicExample\readme.txt" />
      <None Include="Assets\MagicLeap\Examples\Shaders\PointCloud.shader" />
@@ -160,10 +157,8 @@
      <None Include="Assets\MagicLeap\CoreComponents\Vignette\Vignette.shader" />
      <None Include="Assets\MagicLeap\Examples\Documentation\Meshing.txt" />
      <None Include="Assets\MagicLeap\Examples\Plugins\Lumin\manifest.xml" />
-     <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Wireframe Functions.cginc" />
      <None Include="Assets\MagicLeap\Examples\Shaders\UnlitColorTransparent.shader" />
      <None Include="Assets\MagicLeap\Examples\Shaders\BasicWorldSpace.shader" />
-     <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Wireframe.shader" />
      <None Include="Assets\MagicLeap\Examples\Documentation\Vignette.txt" />
      <None Include="Assets\MagicLeap\Examples\Documentation\Controller.txt" />
      <None Include="Assets\MagicLeap\Examples\Documentation\HandTracking.txt" />
@@ -173,13 +168,10 @@
      <None Include="Assets\MagicLeap\Examples\Shaders\MeshWorldSpace.shader" />
      <None Include="Assets\MagicLeap\BackgroundMusicExample\music_manifest.xml" />
      <None Include="Assets\MagicLeap\Examples\Shaders\WorldXZWithLerp.shader" />
-     <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Cutout Wireframe.shader" />
      <None Include="Assets\MagicLeap\Libs\LuminUnity.xml" />
-     <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Double-Sided Wireframe.shader" />
      <None Include="Assets\MagicLeap\Examples\Documentation\ImageCapture.txt" />
      <None Include="Assets\MagicLeap\Examples\Documentation\Raycast.txt" />
      <None Include="Assets\MagicLeap\Examples\Shaders\PlaneEdge.shader" />
-     <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Double-Sided Cutout Wireframe.shader" />
      <None Include="Assets\MagicLeap\Examples\Documentation\MediaPlayer.txt" />
      <None Include="Assets\MagicLeap\Examples\Documentation\AudioCapture.txt" />
      <None Include="Assets\MagicLeap\Soundfield\Release Notes.txt" />

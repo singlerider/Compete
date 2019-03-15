@@ -10,11 +10,17 @@ public class BowlingManager : MonoBehaviour {
 		none,
 		single,
 		tenPin,
-		ball,
-		delete
+		ball
+	}
+	public enum menuState {
+		none,
+		home,
+		modifiers,
+		changeBall
 	}
 
 	public static holdState holding = holdState.single;
+	public static menuState currentMenuState;
 
 	private MLInputController controller;
 	public MLPersistentBehavior persistentBehavior;
@@ -35,6 +41,7 @@ public class BowlingManager : MonoBehaviour {
 	public static string ballColor;
 	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false, settingsOpened = false, occlusionActive = true;
 	private static bool menuClosed = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -59,7 +66,6 @@ public class BowlingManager : MonoBehaviour {
 
 	}
 	private void OnDestroy () {
-		// STOP EVERYTHING
 		MLInput.Stop ();
 	}
 
@@ -115,7 +121,7 @@ public class BowlingManager : MonoBehaviour {
 			endPosition = controller.Position + (control.transform.forward * rayHit.distance);
 			laserLineRenderer.SetPosition (1, endPosition);
 
-			if (settingsOpened && controller.TriggerValue <= 0.2f) {
+			if (settingsOpened && controller.TriggerValue <= 0.2f)  {
 				settingsOpened = false;
 			}
 
@@ -133,7 +139,6 @@ public class BowlingManager : MonoBehaviour {
 				modifierMenu.SetActive (true);
 				menu.SetActive (false);
 				menuClosed = true;
-				settingsOpened = true;
 			} else if (rayHit.transform.gameObject.name == "Tutorial" && controller.TriggerValue >= 0.9f) {
 				menuClosed = true;
 				menuOpened = false;
@@ -148,33 +153,31 @@ public class BowlingManager : MonoBehaviour {
 				PlayerPrefs.SetInt ("hasPlayedBowling", 0);
 				CheckNewUser ();
 			} else if (rayHit.transform.gameObject.name == "NoGravity" && controller.TriggerValue >= 0.9f) {
-				if (!settingsOpened) {
-					if (noGravity) {
-						noGravity = false;
-					} else {
-						noGravity = true;
-					}
-					modifierMenu.SetActive (false);
-					menuClosed = true;
+				if (noGravity) {
+					noGravity = false;
+				} else {
+					noGravity = true;
 				}
+				menuClosed = true;
+				modifierMenu.SetActive (false);
 			} else if (rayHit.transform.gameObject.name == "ShowMesh" && controller.TriggerValue >= 0.9f) {
 				if (!settingsOpened) {
 					if (occlusionActive) {
 						foreach (Transform child in meshHolder) {
-							var objectRender = child.GetComponent<MeshRenderer> ();
+							var objectRender = child.GetComponent<MeshRenderer>();
 							objectRender.material = meshMats[1];
 						}
 						mesh.material = meshMats[1];
 						occlusionActive = false;
 					} else {
 						foreach (Transform child in meshHolder) {
-							var objectRender = child.GetComponent<MeshRenderer> ();
+							var objectRender = child.GetComponent<MeshRenderer>();
 							objectRender.material = meshMats[0];
 						}
 						mesh.material = meshMats[0];
 						occlusionActive = true;
 					}
-					modifierMenu.SetActive (false);
+					modifierMenu.SetActive(false);
 					menuClosed = true;
 				}
 			}
