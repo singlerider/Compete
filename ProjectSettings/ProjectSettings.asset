@@ -666,11 +666,11 @@ PlayerSettings:
     m_ModelFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Model
     m_PortalFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: C:/Users/topdu/Downloads/privatekey/homedesktop.cert
+    m_CertPath: C:/Users/topdu/Downloads/PrivateMLWorld/PrivateMLWorld/ml-sports-cd8f2512.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:
-    m_VersionCode: 10
+    m_VersionCode: 12
     m_VersionName: Compete_Beta
   luminPrivilege:
   - ControllerPose

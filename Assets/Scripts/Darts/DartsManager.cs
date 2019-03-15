@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.MagicLeap;
+using UnityEngine.UI;
+
+
 public class DartsManager : MonoBehaviour {
 	public enum holdState {
 		none,
@@ -11,7 +14,7 @@ public class DartsManager : MonoBehaviour {
 	}
 	public static holdState holding = holdState.none;
 	private MLInputController controller;
-	public GameObject mainCam, control, dartPrefab, dartboardHolder, menu, modifierMenu, tutorialMenu, dartMenu, dartboard;
+	public GameObject mainCam, control, dartPrefab, dartboardHolder, menu, modifierMenu, tutorialMenu, dartMenu, dartboard, deleteLoader;
 	public Transform dartHolder, meshHolder;
 	public static GameObject menuControl;
 	private GameObject dart;
@@ -22,6 +25,9 @@ public class DartsManager : MonoBehaviour {
 	private Vector3 endPosition, forcePerSecond;
 	private float timeHold = 3.0f, totalObjs = 0, objLimit = 15;
 	private Controller checkController;
+
+	public Image loadingImage;
+
 	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, movingDartboard = true, settingsOpened = false, occlusionActive = true, tutorialMenuOpened = false;
 	private static bool menuClosed = false, menuOpened = false;
 	public static bool lockedDartboard = false;
@@ -75,8 +81,18 @@ public class DartsManager : MonoBehaviour {
 			setHand = false;
 			menuControl.SetActive (false);
 		}
-		if (checkController.bumperTimer.getTime () >= timeHold) {
+		if ((checkController.bumperTimer.getTime() >= 0) && (checkController.bumperTimer.getTime() < timeHold)) {
+			deleteLoader.SetActive(true);
+			float currentTime = checkController.bumperTimer.getTime();
+			float percentComplete = currentTime / timeHold;
+			loadingImage.fillAmount = percentComplete;
+		} else if (checkController.bumperTimer.getTime () >= timeHold) {
+			//print("yeeted");
+			deleteLoader.SetActive(false);
 			ClearAllObjects ();
+		} else if (checkController.bumperTimer.getTime() <= 0) {
+			//print("deletus feetus");
+			deleteLoader.SetActive(false);
 		}
 		if (controller.TriggerValue <= 0.2f && tutorialMenuOpened == true) {
 			tutorialMenuOpened = false;
@@ -266,6 +282,7 @@ public class DartsManager : MonoBehaviour {
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == false) {
 			menuOpened = true;
 			menu.SetActive (true);
+			//CenterCam();
 			modifierMenu.SetActive(false);
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == true) {
 			menuOpened = false;
@@ -302,5 +319,14 @@ public class DartsManager : MonoBehaviour {
 			tutorialMenu.SetActive(true);
 			PlayerPrefs.SetInt("hasPlayedDarts", 1);
 		}
+	}
+	private void CenterCam() {
+		float speed = Time.deltaTime * 5f;
+
+		Vector3 pos = mainCam.transform.position + mainCam.transform.forward * 1.0f;
+		menu.transform.position = Vector3.SlerpUnclamped (menu.transform.position, pos, speed);
+	
+		Quaternion rot = Quaternion.LookRotation (menu.transform.position - mainCam.transform.position);
+		menu.transform.rotation = Quaternion.Slerp (menu.transform.rotation, rot, speed);
 	}
 }

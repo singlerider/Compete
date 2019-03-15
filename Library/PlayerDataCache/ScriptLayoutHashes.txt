@@ -1,6 +1,6 @@
 Lumin
 PlayerPath?
-C:/Users/topdu/Desktop/Compete/Compete_Dev.mpk
+C:/Users/topdu/Desktop/Compete/Compete_Private.mpk
 SceneListBegin?
 Assets/Scenes/Meshing.unity
 Assets/Scenes/Main.unity
@@ -167,7 +167,7 @@ b070c608a2c3037a3af830af58b00d9b Assembly-CSharp.dll:MagicLeap.DestroyAfterTime
 cb11bad297ab0b4271df38fdade7ef07 Assembly-CSharp.dll:MagicLeap.ImageTrackingVisualizer
 7c6cfca53c94c1ede60129ec50d74252 Assembly-CSharp.dll:MagicLeap.ImageTrackingExample
 8234eb6652149e31d76420b6f5205093 Assembly-CSharp.dll:MagicLeap.KeyPoseVisualizer
-f29cf5b08bab32c23fcb0862b328d8ef Assembly-CSharp.dll:.BowlingManager
+cc5eaba598b627be3900a5fd4f967e4f Assembly-CSharp.dll:.BowlingManager
 c51003c9192e8c26fa1b5347c6106b74 Assembly-CSharp.dll:MagicLeap.PlacementObject
 a814b880ff4f40c17dfbb0350c7828a2 Assembly-CSharp.dll:MagicLeap.ControllerVisualizer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu
@@ -247,4 +247,4 @@ b0b280965cfc4ea6ff1605a3f13debaa Assembly-CSharp.dll:.MeshingMenu
 66eb4003e71585f0ef4c23034c2aa3b2 Assembly-CSharp.dll:MagicLeap.VirtualPointer
 08a92322e38205b685c92fa359d21d7a Assembly-CSharp.dll:MagicLeap.MeshingVisualizer
 2c832bb50381ee4d40b2f62c67f06a67 Assembly-CSharp.dll:MagicLeap.DeepSeaExplorerLauncher
-770fdc53a4d25df83c02b831c68714cd Assembly-CSharp.dll:.DartsManager
+e7770328bf521af59ab5490c46390ae2 Assembly-CSharp.dll:.DartsManager
