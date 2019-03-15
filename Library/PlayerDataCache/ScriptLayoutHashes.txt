@@ -230,7 +230,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9674758b3e641c81b6373bf74cebaf45 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.MLPersistentBehavior
 9e405adee553fe2560a33dd954e3ab45 MSA.Runtime.dll:MSA.MSAListener
 9f7e98f3c74722d33450341091b5ed75 MSA.Runtime.dll:MSA.MSASource
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BowlingPlaceObject
 bd8dba5f8f9406c24767e50bdfeaf214 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.ComboRaycastEyes
 8ef655ebebfe0955a6bf746ebeb600b6 Assembly-CSharp.dll:UnityEngine.XR.MagicLeap.PrivilegeDeniedError
 438b028f4186ddc492eac801f701928a Assembly-CSharp.dll:MagicLeap.FaceCamera

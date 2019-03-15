@@ -1,19 +1,19 @@
 ----IL2CPP Arguments----
---convert-to-cpp --emit-null-checks --enable-stacktrace --enable-array-bounds-check --compile-cpp --libil2cpp-static --platform=Lumin --architecture=ARM64 --configuration=Release --outputpath=C:\Users\topdu\Desktop\Compete\Temp/StagingArea/Data\Native\libil2cpp.so --cachedirectory=C:\Users\topdu\Desktop\Compete\Assets\..\Library\il2cpp_cache/il2cpp_cache --plugin=C:\Program Files\Unity 2018.1.9f2-MLTP10\Editor\Data\PlaybackEngines\lumin/Tools\MLIl2CppPlugin.dll --verbose --enable-stats --stats-output-dir=C:/Users/topdu/Desktop/Compete/Assets/../Library/il2cpp_stats --map-file-parser=C:\Program Files\Unity 2018.1.9f2-MLTP10\Editor\Data\Tools\MapFileParser\MapFileParser.exe --assembly=C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll --assembly=C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\Unity.XR.MagicLeap.dll --assembly=C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll --assembly=C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\MSA.Runtime.dll --assembly=C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.Analytics.dll --assembly=C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.dll --generatedcppdir=C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\il2cppOutput
+--convert-to-cpp --emit-null-checks --enable-stacktrace --enable-array-bounds-check --compile-cpp --libil2cpp-static --platform=Lumin --architecture=ARM64 --configuration=Release --outputpath=C:\Users\MPCR Lab\Desktop\Compete\Temp/StagingArea/Data\Native\libil2cpp.so --cachedirectory=C:\Users\MPCR Lab\Desktop\Compete\Assets\..\Library\il2cpp_cache/il2cpp_cache --plugin=C:\Program Files\Unity 2018.1.9f2-MLTP10\Editor\Data\PlaybackEngines\lumin/Tools\MLIl2CppPlugin.dll --verbose --enable-stats --stats-output-dir=C:/Users/MPCR Lab/Desktop/Compete/Assets/../Library/il2cpp_stats --map-file-parser=C:\Program Files\Unity 2018.1.9f2-MLTP10\Editor\Data\Tools\MapFileParser\MapFileParser.exe --assembly=C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll --assembly=C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\Unity.XR.MagicLeap.dll --assembly=C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll --assembly=C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\MSA.Runtime.dll --assembly=C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.Analytics.dll --assembly=C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.dll --generatedcppdir=C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\il2cppOutput
 
 ----Assemblies Converted-----
-	C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
-	C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\Unity.XR.MagicLeap.dll
-	C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
-	C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\MSA.Runtime.dll
-	C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.Analytics.dll
-	C:\Users\topdu\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.dll
+	C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
+	C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\Unity.XR.MagicLeap.dll
+	C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
+	C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\MSA.Runtime.dll
+	C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.Analytics.dll
+	C:\Users\MPCR Lab\Desktop\Compete\Temp\StagingArea\Data\Managed\UnityEngine.dll
 
 ----- il2cpp Statistics -----
 General:
 	Conversion Time: 14.215 s
 	Files Written: 137
-	String Literals: 5725
+	String Literals: 5726
 Methods:
 	Total Methods: 28642
 	Non-Generic Methods: 19342
@@ -30,7 +30,7 @@ Metadata:
 	Properties: 104.1 kb
 	Methods: 1,137.9 kb
 	Parameter Default Values: 0.4 kb
-	Field Default Values: 53.9 kb
+	Field Default Values: 53.8 kb
 	Field and Parameter Default Values Data: 57.5 kb
 	Field Marshaled Sizes: 12.5 kb
 	Parameters: 333.9 kb
@@ -40,9 +40,9 @@ Metadata:
 	Generic Containers: 3.2 kb
 	Nested Types: 2.7 kb
 	Interfaces: 4.3 kb
-	VTables: 138.1 kb
+	VTables: 138.0 kb
 	Interface Offsets: 28.3 kb
-	Type Definitions: 336.2 kb
+	Type Definitions: 336.0 kb
 	RGCTX Entries: 4.9 kb
 	Images: 1.3 kb
 	Assemblies: 2.7 kb
@@ -251,7 +251,7 @@ Il2CppCompilerCalculateTypeValues_6Table.cpp	228849
 Il2CppCompilerCalculateTypeValues_7Table.cpp	238604
 Il2CppCompilerCalculateTypeValues_8Table.cpp	228265
 Il2CppCompilerCalculateTypeValues_9Table.cpp	239294
-Il2CppCompilerCalculateTypeValuesTable.cpp	475704
+Il2CppCompilerCalculateTypeValuesTable.cpp	475434
 Il2CppGenericClassTable.cpp	420017
 Il2CppGenericComDefinitions0.cpp	207
 Il2CppGenericInstDefinitions.cpp	369567
