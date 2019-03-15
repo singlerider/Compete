@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c890bdf354698ba429472b626542bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _privileges: 
+  _privileges: c9000000
 --- !u!1 &408568939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264357378}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 060932cc11c484c25ac9a2214df40470, type: 3}
   m_Name: 
@@ -3489,7 +3489,10 @@ MonoBehaviour:
   modifierMenu: {fileID: 429193106}
   tutorialMenu: {fileID: 734010893}
   controlCube: {fileID: 1783416902}
+<<<<<<< HEAD
   deleteLoader: {fileID: 1334582121}
+=======
+>>>>>>> parent of 778037b... Private Release
   transparent: {fileID: 2100000, guid: 5f7a8f815117efc428db87c9080e7cd0, type: 2}
   activeMat: {fileID: 2100000, guid: 1241e8c5f5fe9da4b9bc2280d8bd6a39, type: 2}
   ballMats:
@@ -3498,20 +3501,21 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 792aca69a10c4bc41900500bb1f28110, type: 2}
   - {fileID: 2100000, guid: f1909ebae5300ce409978782d73efaf9, type: 2}
   - {fileID: 2100000, guid: 409000ab20ea96348b331391cecbf241, type: 2}
-  meshMats: []
   singlePrefab: {fileID: 4133021336326310, guid: 98d06c4847240a74688cb689add5a9a3,
     type: 2}
-  tenPinPrefab: {fileID: 4266296333401454, guid: 3d916487b7d103244995b488ca077db0,
+  tenPinPrefab: {fileID: 4089586645689094, guid: 3d916487b7d103244995b488ca077db0,
     type: 2}
   pinHolder: {fileID: 1264357379}
   singleNoGravityPrefab: {fileID: 4143102817622770, guid: afd1a965e587d6d4fbc445326065100b,
     type: 2}
   tenPinNoGravityPrefab: {fileID: 4642960488002650, guid: fc161173268a70747914d234a4acb739,
     type: 2}
-  meshHolder: {fileID: 358540197}
   laserLineRenderer: {fileID: 1800665534}
+<<<<<<< HEAD
   mesh: {fileID: 1242382934}
   loadingImage: {fileID: 1657437679}
+=======
+>>>>>>> parent of 778037b... Private Release
 --- !u!120 &1800665534
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -3789,7 +3793,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1783416903}
+<<<<<<< HEAD
   - {fileID: 1871670297}
+=======
+>>>>>>> parent of 778037b... Private Release
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

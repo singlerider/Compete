@@ -631,12 +631,17 @@ PlayerSettings:
     m_ModelFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Model
     m_PortalFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: C:/Users/topdu/Downloads/PrivateMLWorld/PrivateMLWorld/ml-sports-cd8f2512.cert
+    m_CertPath: C:/Users/topdu/Downloads/privatekey/homedesktop.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:
+<<<<<<< HEAD
     m_VersionCode: 13
     m_VersionName: 
+=======
+    m_VersionCode: 10
+    m_VersionName: Compete_Beta
+>>>>>>> parent of 778037b... Private Release
   luminPrivilege:
   - ControllerPose
   - WorldReconstruction

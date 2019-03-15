@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.MagicLeap;
-using UnityEngine.UI;
 
 public class BowlingManager : MonoBehaviour {
 
@@ -20,7 +19,7 @@ public class BowlingManager : MonoBehaviour {
 	private MLInputController controller;
 	public MLPersistentBehavior persistentBehavior;
 
-	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube, deleteLoader;
+	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube;
 	public static GameObject menuControl;
 	private GameObject bowlingBall;
 	public Material transparent, activeMat;
@@ -34,8 +33,6 @@ public class BowlingManager : MonoBehaviour {
 	private Controller checkController;
 	public static float growSpeed;
 	public static string ballColor;
-
-	public Image loadingImage;
 	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false, settingsOpened = false, occlusionActive = true;
 	private static bool menuClosed = false;
 
@@ -98,18 +95,8 @@ public class BowlingManager : MonoBehaviour {
 			setHand = false;
 			menuControl.SetActive (false);
 		}
-		if ((checkController.bumperTimer.getTime() >= 0) && (checkController.bumperTimer.getTime() < timeHold)) {
-			deleteLoader.SetActive(true);
-			float currentTime = checkController.bumperTimer.getTime();
-			float percentComplete = currentTime / timeHold;
-			loadingImage.fillAmount = percentComplete;
-		} else if (checkController.bumperTimer.getTime () >= timeHold) {
-			//print("yeeted");
-			deleteLoader.SetActive(false);
+		if (checkController.bumperTimer.getTime () >= timeHold) {
 			ClearAllObjects ();
-		} else if (checkController.bumperTimer.getTime() <= 0) {
-			//print("deletus feetus");
-			deleteLoader.SetActive(false);
 		}
 		if (controller.TriggerValue <= 0.2f && tutorialMenuOpened == true) {
 			tutorialMenuOpened = false;
@@ -289,7 +276,6 @@ public class BowlingManager : MonoBehaviour {
 			// When the user presses the Home button and the menu is not opened, then open the menu
 			laserLineRenderer.material = activeMat;
 			menu.SetActive (true);
-			//CenterCam();
 			modifierMenu.SetActive (false);
 			menuOpened = true;
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == true) {
@@ -320,6 +306,16 @@ public class BowlingManager : MonoBehaviour {
 					Rigidbody ballRB = bowlingBall.GetComponent<Rigidbody> ();
 					ballRB.useGravity = false;
 				}
+				//  else if (holding == holdState.ball) {
+				// 	//Spawn ball, disable gravity for noGravity state, then set color based on PlayerPrefs value
+				// 	holdingBall = true;
+				// 	bowlingBall = Instantiate (ballPrefab, controller.Position, tenPinOrientation.transform.rotation);
+				// 	Rigidbody ballRB = bowlingBall.GetComponent<Rigidbody> ();
+				// 	ballRB.useGravity = false;
+				// 	Transform ballObject = bowlingBall.transform.GetChild (0);
+				// 	Renderer ballMat = ballObject.GetComponent<Renderer> ();
+				// 	ballMat.material = ballMats[PlayerPrefs.GetInt ("ballColorInt", 0)];
+				// }
 			}
 		} else {
 			// Don't spawn any objects if there are more objects than the objLimit
@@ -348,9 +344,5 @@ public class BowlingManager : MonoBehaviour {
 			tutorialMenu.SetActive (true);
 			PlayerPrefs.SetInt ("hasPlayedBowling", 1);
 		}
-	}
-	private void CenterCam() {
-		menu.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
-		menu.transform.rotation = mainCam.transform.rotation;
 	}
 }
