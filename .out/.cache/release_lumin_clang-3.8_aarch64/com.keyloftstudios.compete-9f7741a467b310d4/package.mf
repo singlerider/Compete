@@ -24,15 +24,24 @@
    "hash": "72c07d8d4cf9e63f6498f20508470c6d9862f6a9",
    "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
    "size": 3965264,
+<<<<<<< HEAD
+>>>>>>> parent of 778037b... Private Release
+=======
 >>>>>>> parent of 778037b... Private Release
    "src": "C:/Users/topdu/Desktop/Compete/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
   },
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "9026cd694a3e7c8eca76bb6a2b4502b19276bc8a",
    "pkgpath": "bin/libil2cpp.so",
    "size": 34731672,
+=======
+   "hash": "b61ce8a14d695900e47cf770d9f06e3c293b8a64",
+   "pkgpath": "bin/libil2cpp.so",
+   "size": 44470608,
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "b61ce8a14d695900e47cf770d9f06e3c293b8a64",
    "pkgpath": "bin/libil2cpp.so",
@@ -49,9 +58,15 @@
     }
    },
 <<<<<<< HEAD
+<<<<<<< HEAD
    "xfrm_hash": "316dd1e1f50d527adbaa4db1e8a2767bc1405a1a",
    "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\libil2cpp.so-c22a262ec12b37f7",
    "xfrm_size": 34732437
+=======
+   "xfrm_hash": "504520996668489e779668cefec8f99738a9c9f1",
+   "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\libil2cpp.so-c22a262ec12b37f7",
+   "xfrm_size": 44471366
+>>>>>>> parent of 778037b... Private Release
 =======
    "xfrm_hash": "504520996668489e779668cefec8f99738a9c9f1",
    "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\libil2cpp.so-c22a262ec12b37f7",
@@ -193,7 +208,11 @@
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "b1b09490fb6b0f6cde40ae5a45b27370b6c71dd1",
+=======
+   "hash": "03c9758d506eaa097f186df7d356ffaaa86ce272",
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "03c9758d506eaa097f186df7d356ffaaa86ce272",
 >>>>>>> parent of 778037b... Private Release
@@ -204,9 +223,15 @@
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "8ab8deb6b4b307ba698f4b4067fac20eca83f0f4",
    "pkgpath": "Data/globalgamemanagers.assets",
    "size": 38132,
+=======
+   "hash": "4ba13562bd1e1ad2ce4552eeb9a1b10d0f2eef89",
+   "pkgpath": "Data/globalgamemanagers.assets",
+   "size": 38268,
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "4ba13562bd1e1ad2ce4552eeb9a1b10d0f2eef89",
    "pkgpath": "Data/globalgamemanagers.assets",
@@ -238,9 +263,15 @@
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "938171dfa7a30cb854b644a903e91f7b33ee71de",
    "pkgpath": "Data/level2",
    "size": 26656,
+=======
+   "hash": "a3549bee88f590659bc7ba71a3865e72426d07be",
+   "pkgpath": "Data/level2",
+   "size": 25248,
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "a3549bee88f590659bc7ba71a3865e72426d07be",
    "pkgpath": "Data/level2",
@@ -258,7 +289,11 @@
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "9397bf4e0ced905d4e58d5f09b3f0d69b3b13beb",
+=======
+   "hash": "ed52380ab7817ba266dfa0e8543e01c561130901",
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "ed52380ab7817ba266dfa0e8543e01c561130901",
 >>>>>>> parent of 778037b... Private Release
@@ -297,9 +332,15 @@
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "96952338e8a13f4ceea3c42aad92d23889bdf6e6",
    "pkgpath": "Data/sharedassets2.assets",
    "size": 642228,
+=======
+   "hash": "8791f23fd0005eb812e53deed286ef7ef73f8cfa",
+   "pkgpath": "Data/sharedassets2.assets",
+   "size": 449812,
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "8791f23fd0005eb812e53deed286ef7ef73f8cfa",
    "pkgpath": "Data/sharedassets2.assets",
@@ -317,9 +358,15 @@
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "6122f78ff6db62935d53c90e8aa080cfd7a9d075",
    "pkgpath": "Data/sharedassets3.assets",
    "size": 239216,
+=======
+   "hash": "a314b78bde207a445b7b246c2d0577a8b5c97de4",
+   "pkgpath": "Data/sharedassets3.assets",
+   "size": 165968,
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "a314b78bde207a445b7b246c2d0577a8b5c97de4",
    "pkgpath": "Data/sharedassets3.assets",
@@ -424,7 +471,11 @@
   {
    "compression": 8,
 <<<<<<< HEAD
+<<<<<<< HEAD
    "hash": "64692bce5b6250202a962a13b174603f19587ba9",
+=======
+   "hash": "9870ac5b753ed1f0f39a93767aa2201e53e278c2",
+>>>>>>> parent of 778037b... Private Release
 =======
    "hash": "9870ac5b753ed1f0f39a93767aa2201e53e278c2",
 >>>>>>> parent of 778037b... Private Release
@@ -438,9 +489,15 @@
     }
    },
 <<<<<<< HEAD
+<<<<<<< HEAD
    "xfrm_hash": "2a4c322dc2a2aa04f59e2601e52a25cd0f3a6578",
    "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\manifest.xml-064277d9b5950a96",
    "xfrm_size": 688
+=======
+   "xfrm_hash": "8186ef654d7d94b6310b7a0c4a1c504eef33ee89",
+   "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\manifest.xml-064277d9b5950a96",
+   "xfrm_size": 663
+>>>>>>> parent of 778037b... Private Release
 =======
    "xfrm_hash": "8186ef654d7d94b6310b7a0c4a1c504eef33ee89",
    "xfrm_path": "C:/Users/topdu/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.keyloftstudios.compete-9f7741a467b310d4\\manifest.xml-064277d9b5950a96",

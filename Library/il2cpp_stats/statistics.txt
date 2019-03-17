@@ -13,6 +13,7 @@
 General:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Conversion Time: 10.665 s
 	Files Written: 115
 	String Literals: 3604
@@ -54,6 +55,8 @@ Metadata:
 =======
 =======
 >>>>>>> parent of c99c3f5... Added settings changes to ball selection
+=======
+>>>>>>> parent of 778037b... Private Release
 	Conversion Time: 14.202 s
 	Files Written: 137
 	String Literals: 5725
@@ -103,6 +106,7 @@ Metadata:
 Codegen:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	NullChecks : 39022
 =======
 	NullChecks : 57325
@@ -110,6 +114,9 @@ Codegen:
 =======
 	NullChecks : 57325
 >>>>>>> parent of c99c3f5... Added settings changes to ball selection
+=======
+	NullChecks : 57325
+>>>>>>> parent of 778037b... Private Release
 Hashing:
 	String Literal Hash Collisions : 0
 	Type Hash Collisions : 205
@@ -126,6 +133,7 @@ Interop:
 	COM callable wrapper methods that were forwarded to call base class method : 0
 Compilation:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Total Files: 536
 	Files Compiled: 2
 	Cache Hits: 534
@@ -137,10 +145,16 @@ Compilation:
 >>>>>>> parent of 778037b... Private Release
 =======
 >>>>>>> parent of c99c3f5... Added settings changes to ball selection
+=======
+	Total Files: 558
+	Files Compiled: 4
+	Cache Hits: 554
+>>>>>>> parent of 778037b... Private Release
 	Cache Hit %: 99
 
 
 ----Assembly Conversion Times----
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	Convert Assembly-CSharp (297.0439453125ms)
@@ -254,6 +268,8 @@ Bulk_Generics_9.cpp	1524405
 
 ----Generated Files----
 =======
+=======
+>>>>>>> parent of 778037b... Private Release
 	Convert Assembly-CSharp (305.800689697266ms)
 	Convert LuminUnity (473.259918212891ms)
 	Convert Mono.Security (279.8671875ms)
@@ -303,7 +319,10 @@ Bulk_Generics_9.cpp	1524405
 	AllAssemblyConversion: 6673.83251953125
 
 ----Generated Files----
+<<<<<<< HEAD
 >>>>>>> parent of c99c3f5... Added settings changes to ball selection
+=======
+>>>>>>> parent of 778037b... Private Release
 Bulk_Assembly-CSharp_0.cpp	2182590
 Bulk_Assembly-CSharp_1.cpp	1374615
 Bulk_Generics_0.cpp	1881018
