@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 981db761055a48246a00422f2125bdde
+  productGUID: c73745f7ebb18b942b9fc2a6dddde449
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -627,7 +627,6 @@ PlayerSettings:
   cloudServicesEnabled: {}
   luminIcon:
     m_Name: 
-<<<<<<< HEAD
     m_ModelFolderPath: 
     m_PortalFolderPath: 
   luminCert:
@@ -638,20 +637,6 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   luminPrivilege: []
-=======
-    m_ModelFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Model
-    m_PortalFolderPath: C:/Users/topdu/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
-  luminCert:
-    m_CertPath: C:/Users/topdu/Downloads/privatekey/homedesktop.cert
-    m_PrivateKeyPath: 
-  luminIsChannelApp: 0
-  luminVersion:
-    m_VersionCode: 10
-    m_VersionName: Compete_Beta
-  luminPrivilege:
-  - ControllerPose
-  - WorldReconstruction
->>>>>>> parent of c99c3f5... Added settings changes to ball selection
   luminMinimumPlatformAPILevel: 3
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
