@@ -82,7 +82,6 @@ public class BowlingManager : MonoBehaviour {
 		control.transform.position = controller.Position;
 		control.transform.rotation = controller.Orientation;
 
-        //CenterCam();
 		//HoldingBall();
 		if (tutorialActive == false) {
 			SetLine ();
@@ -159,6 +158,7 @@ public class BowlingManager : MonoBehaviour {
 				modifierMenu.SetActive (true);
 				menu.SetActive (false);
 				menuClosed = true;
+                settingsOpened = true;
 			} else if (rayHit.transform.gameObject.name == "Tutorial" && controller.TriggerValue >= 0.9f) {
 				menuClosed = true;
 				menuOpened = false;
@@ -173,14 +173,20 @@ public class BowlingManager : MonoBehaviour {
 				PlayerPrefs.SetInt ("hasPlayedBowling", 0);
 				CheckNewUser ();
 			} else if (rayHit.transform.gameObject.name == "NoGravity" && controller.TriggerValue >= 0.9f) {
-				if (noGravity) {
-					noGravity = false;
-				} else {
-					noGravity = true;
-				}
-				menuClosed = true;
-				modifierMenu.SetActive (false);
-			} else if (rayHit.transform.gameObject.name == "ShowMesh" && controller.TriggerValue >= 0.9f) {
+                if (!settingsOpened)
+                {
+                    if (noGravity)
+                    {
+                        noGravity = false;
+                    }
+                    else
+                    {
+                        noGravity = true;
+                    }
+                    modifierMenu.SetActive(false);
+                    menuClosed = true;
+                }
+            } else if (rayHit.transform.gameObject.name == "ShowMesh" && controller.TriggerValue >= 0.9f) {
 				if (!settingsOpened) {
 					if (occlusionActive) {
 						foreach (Transform child in meshHolder) {
@@ -290,7 +296,11 @@ public class BowlingManager : MonoBehaviour {
 	}
 
 	void OnButtonDown (byte controller_id, MLInputControllerButton button) {
-		holding = holdState.none;
+
+        menuCanvas.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
+        menuCanvas.transform.rotation = mainCam.transform.rotation;
+
+        holding = holdState.none;
 		if (button == MLInputControllerButton.HomeTap && tutorialActive == true) {
 			tutorialHomePressed = true;
 		} else if (button == MLInputControllerButton.Bumper && tutorialActive == true) {
@@ -299,7 +309,7 @@ public class BowlingManager : MonoBehaviour {
 			// When the user presses the Home button and the menu is not opened, then open the menu
 			laserLineRenderer.material = activeMat;
 			menu.SetActive (true);
-			//CenterCam();
+
 			modifierMenu.SetActive (false);
 			menuOpened = true;
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == true) {
@@ -359,15 +369,4 @@ public class BowlingManager : MonoBehaviour {
 			PlayerPrefs.SetInt ("hasPlayedBowling", 1);
 		}
 	}
-	private void CenterCam() {
-        if (!tutorialMenuOpened) {
-            float speed = Time.deltaTime * 5f;
-
-            Vector3 pos = mainCam.transform.position + mainCam.transform.forward * 1.0f;
-            menu.transform.position = Vector3.SlerpUnclamped(menu.transform.position, pos, speed);
-
-            Quaternion rot = Quaternion.LookRotation(menu.transform.position - mainCam.transform.position);
-            menu.transform.rotation = Quaternion.Slerp(menu.transform.rotation, rot, speed);
-        }
-    }
 }
