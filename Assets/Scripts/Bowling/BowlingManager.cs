@@ -26,7 +26,7 @@ public class BowlingManager : MonoBehaviour {
 	private MLInputController controller;
 	public MLPersistentBehavior persistentBehavior;
 
-	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube, deleteLoader;
+	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube, deleteLoader, menuCanvas;
 	public static GameObject menuControl;
 	private GameObject bowlingBall;
 	public Material transparent, activeMat;
@@ -67,16 +67,22 @@ public class BowlingManager : MonoBehaviour {
 
 		bowlingBall = Instantiate (ballPrefab, new Vector3 (100, 100, 100), tenPinOrientation.transform.rotation);
 
-	}
+       // menu.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
+       // menu.transform.rotation = mainCam.transform.rotation;
+
+    }
 	private void OnDestroy () {
 		MLInput.Stop ();
-	}
+        //SceneManager.UnloadSceneAsync("Bowling");
+    }
 
 	// Update is called once per frame
 	void Update () {
 
 		control.transform.position = controller.Position;
 		control.transform.rotation = controller.Orientation;
+
+        //CenterCam();
 		//HoldingBall();
 		if (tutorialActive == false) {
 			SetLine ();
@@ -140,7 +146,8 @@ public class BowlingManager : MonoBehaviour {
 
 			if (rayHit.transform.gameObject.name == "Home" && controller.TriggerValue >= 0.9f) {
 				SceneManager.LoadScene ("Main", LoadSceneMode.Single);
-			} else if (rayHit.transform.gameObject.name == "ChangeBall" && controller.TriggerValue >= 0.9f) {
+                SceneManager.UnloadSceneAsync("Bowling");
+            } else if (rayHit.transform.gameObject.name == "ChangeBall" && controller.TriggerValue >= 0.9f) {
 				ballMenu.transform.position = mainCam.transform.position + (mainCam.transform.forward * 1.5f);
 				ballMenu.transform.rotation = mainCam.transform.rotation;
 				ballMenu.SetActive (true);
@@ -353,7 +360,14 @@ public class BowlingManager : MonoBehaviour {
 		}
 	}
 	private void CenterCam() {
-		menu.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
-		menu.transform.rotation = mainCam.transform.rotation;
-	}
+        if (!tutorialMenuOpened) {
+            float speed = Time.deltaTime * 5f;
+
+            Vector3 pos = mainCam.transform.position + mainCam.transform.forward * 1.0f;
+            menu.transform.position = Vector3.SlerpUnclamped(menu.transform.position, pos, speed);
+
+            Quaternion rot = Quaternion.LookRotation(menu.transform.position - mainCam.transform.position);
+            menu.transform.rotation = Quaternion.Slerp(menu.transform.rotation, rot, speed);
+        }
+    }
 }

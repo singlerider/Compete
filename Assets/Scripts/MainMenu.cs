@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour {
 	void Awake () {
 		_cam = GameObject.Find ("/Main Camera");
 		menu = GameObject.Find ("/Menu");
-		menu.transform.position = _cam.transform.position + _cam.transform.forward * 2.5f;
+		menu.transform.position = _cam.transform.position + _cam.transform.forward * 1.0f;
 		menu.transform.rotation = _cam.transform.rotation;
 	}
 

@@ -155,7 +155,8 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Lumin: com.leapahead.compete
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
@@ -627,16 +628,18 @@ PlayerSettings:
   cloudServicesEnabled: {}
   luminIcon:
     m_Name: 
-    m_ModelFolderPath: 
-    m_PortalFolderPath: 
+    m_ModelFolderPath: /Users/trevorrose/Desktop/Compete/Icon/BowlingIcon/Icon/Model
+    m_PortalFolderPath: /Users/trevorrose/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: 
+    m_CertPath: /Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:
-    m_VersionCode: 1
-    m_VersionName: 
-  luminPrivilege: []
+    m_VersionCode: 5
+    m_VersionName: Compete_Beta
+  luminPrivilege:
+  - ControllerPose
+  - WorldReconstruction
   luminMinimumPlatformAPILevel: 3
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2

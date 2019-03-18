@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2277,7 +2277,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 996169282}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cc39f59e9e41694ba4860eb039ac967, type: 3}
   m_Name: 
@@ -3456,6 +3456,7 @@ MonoBehaviour:
   tutorialMenu: {fileID: 734010893}
   controlCube: {fileID: 1783416902}
   deleteLoader: {fileID: 2096580181}
+  menuCanvas: {fileID: 996169282}
   transparent: {fileID: 2100000, guid: 5f7a8f815117efc428db87c9080e7cd0, type: 2}
   activeMat: {fileID: 2100000, guid: 1241e8c5f5fe9da4b9bc2280d8bd6a39, type: 2}
   ballMats:
@@ -3467,7 +3468,7 @@ MonoBehaviour:
   meshMats: []
   singlePrefab: {fileID: 4133021336326310, guid: 98d06c4847240a74688cb689add5a9a3,
     type: 2}
-  tenPinPrefab: {fileID: 4266296333401454, guid: 3d916487b7d103244995b488ca077db0,
+  tenPinPrefab: {fileID: 4817967436732632, guid: 3d916487b7d103244995b488ca077db0,
     type: 2}
   pinHolder: {fileID: 1264357379}
   singleNoGravityPrefab: {fileID: 4143102817622770, guid: afd1a965e587d6d4fbc445326065100b,

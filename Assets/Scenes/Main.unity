@@ -692,7 +692,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: dd641686811944448900a6e8069055c5, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -1232,7 +1232,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: dd641686811944448900a6e8069055c5, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -2084,6 +2084,7 @@ MonoBehaviour:
   joinLobby: {fileID: 0}
   exitLobby: {fileID: 0}
   quitMenu: {fileID: 5974514}
+  mainCam: {fileID: 1687258581}
 --- !u!120 &1687258587
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2235,7 +2236,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2138677391}
   m_LocalRotation: {x: 0.08564905, y: -0.41474324, z: 0.8961623, w: 0.13245948}
-  m_LocalPosition: {x: -0.172, y: 3, z: -1.5}
+  m_LocalPosition: {x: -0.12, y: 0.543, z: -0.861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1687258585}

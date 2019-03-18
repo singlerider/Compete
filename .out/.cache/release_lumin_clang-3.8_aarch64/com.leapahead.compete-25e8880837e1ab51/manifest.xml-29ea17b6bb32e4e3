@@ -1,0 +1,10 @@
+<manifest xmlns:ml="magicleap" ml:developer_id="14c938f1-4b2d-43f6-bc52-aea702880c34" ml:package="com.leapahead.compete" ml:version_code="5" ml:version_name="Compete_Beta">
+  <application ml:min_api_level="3" ml:sdk_version="1.0" ml:visible_name="Compete">
+    <uses-privilege ml:name="LowLatencyLightwear" />
+    <uses-privilege ml:name="ControllerPose" />
+    <uses-privilege ml:name="WorldReconstruction" />
+    <component ml:binary_name="bin/Player.elf" ml:name=".fullscreen" ml:type="Fullscreen" ml:visible_name="Compete">
+      <icon ml:model_folder="Icon/Model" ml:portal_folder="Icon/Portal" />
+    </component>
+  </application>
+</manifest>

@@ -46,10 +46,14 @@ public class DartsManager : MonoBehaviour {
 
 		menuControl = GameObject.Find ("ObjectMenu");
 		checkController = control.GetComponentInChildren<Controller> ();
-	}
+
+        //menu.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
+        //menu.transform.rotation = mainCam.transform.rotation;
+    }
 	private void OnDestroy () {
 		MLInput.Stop ();
-	}
+        SceneManager.UnloadSceneAsync("Darts");
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -114,7 +118,8 @@ public class DartsManager : MonoBehaviour {
 
 			if (rayHit.transform.gameObject.name == "Home" && controller.TriggerValue >= 0.9f) {
 				SceneManager.LoadScene("Main", LoadSceneMode.Single);
-			} else if (rayHit.transform.gameObject.name == "ChangeDart" && controller.TriggerValue >= 0.9f) {
+                SceneManager.UnloadSceneAsync("Darts");
+            } else if (rayHit.transform.gameObject.name == "ChangeDart" && controller.TriggerValue >= 0.9f) {
 				dart = Instantiate(dartPrefab, new Vector3(100, 100, 100), controller.Orientation, dartHolder);
 				dartMenu.transform.position = mainCam.transform.position + (mainCam.transform.forward * 1.5f);
 				dartMenu.transform.rotation = mainCam.transform.rotation;
@@ -320,13 +325,17 @@ public class DartsManager : MonoBehaviour {
 			PlayerPrefs.SetInt("hasPlayedDarts", 1);
 		}
 	}
-	private void CenterCam() {
-		float speed = Time.deltaTime * 5f;
+    private void CenterCam()
+    {
+        while (!tutorialMenuOpened)
+        {
+            float speed = Time.deltaTime * 5f;
 
-		Vector3 pos = mainCam.transform.position + mainCam.transform.forward * 1.0f;
-		menu.transform.position = Vector3.SlerpUnclamped (menu.transform.position, pos, speed);
-	
-		Quaternion rot = Quaternion.LookRotation (menu.transform.position - mainCam.transform.position);
-		menu.transform.rotation = Quaternion.Slerp (menu.transform.rotation, rot, speed);
-	}
+            Vector3 pos = mainCam.transform.position + mainCam.transform.forward * 1.0f;
+            menu.transform.position = Vector3.SlerpUnclamped(menu.transform.position, pos, speed);
+
+            Quaternion rot = Quaternion.LookRotation(menu.transform.position - mainCam.transform.position);
+            menu.transform.rotation = Quaternion.Slerp(menu.transform.rotation, rot, speed);
+        }
+    }
 }
