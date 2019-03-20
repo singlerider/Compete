@@ -1,6 +1,6 @@
 Lumin
 PlayerPath?
-/Users/trevorrose/Desktop/Compete/Compete_Dev.mpk
+/Users/trevorrose/Desktop/Compete/Compete_Private.mpk
 SceneListBegin?
 Assets/Scenes/Meshing.unity
 Assets/Scenes/Main.unity
