@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallVelocity : MonoBehaviour {
-	private Rigidbody ballRB;
+
+	// private Rigidbody ballRB;
 	private float velocity;
-	private AudioSource ballAudio;
-	private bool audioStarted = false;
+	// private AudioSource ballAudio;
+	// private bool audioStarted = false;
 
 	// Use this for initialization
 	void Start () {
-		ballRB = this.gameObject.transform.GetComponent<Rigidbody>();
-		ballAudio = this.gameObject.transform.GetComponent<AudioSource>();
+		// ballRB = this.gameObject.transform.GetComponent<Rigidbody>();
+		// ballAudio = this.gameObject.transform.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame

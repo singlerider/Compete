@@ -26,6 +26,6 @@ public class MenuCollide : MonoBehaviour {
 			print ("Holdstate: single");
 			BowlingManager.holding = BowlingManager.holdState.single;
 			BowlingManager.CloseMenu ();
-		} 
+		}
 	}
 }

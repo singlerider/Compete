@@ -14,7 +14,7 @@ public class DartsManager : MonoBehaviour {
 	}
 	public static holdState holding = holdState.none;
 	private MLInputController controller;
-	public GameObject mainCam, control, dartPrefab, dartboardHolder, menu, modifierMenu, tutorialMenu, dartMenu, dartboard, deleteLoader;
+	public GameObject mainCam, control, dartPrefab, dartboardHolder, menu, modifierMenu, tutorialMenu, dartMenu, dartboard, deleteLoader, menuCanvas;
 	public Transform dartHolder, meshHolder;
 	public static GameObject menuControl;
 	private GameObject dart;
@@ -47,9 +47,8 @@ public class DartsManager : MonoBehaviour {
 		menuControl = GameObject.Find ("ObjectMenu");
 		checkController = control.GetComponentInChildren<Controller> ();
 
-        //menu.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
-        //menu.transform.rotation = mainCam.transform.rotation;
-    }
+	}
+
 	private void OnDestroy () {
 		MLInput.Stop ();
         SceneManager.UnloadSceneAsync("Darts");
@@ -64,6 +63,7 @@ public class DartsManager : MonoBehaviour {
 			PlaceObject ();
 		} else {
 			if ((controller.Touch1Active || controller.TriggerValue >= 0.2f || tutorialBumperPressed || tutorialHomePressed) && tutorialMenuOpened == false) {
+				laserLineRenderer.material = activeMat;
 				CheckNewUser();
 			}
 		}
@@ -279,19 +279,24 @@ public class DartsManager : MonoBehaviour {
 	}
 
 	void OnButtonDown (byte controller_id, MLInputControllerButton button) {
+		
+		menuCanvas.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
+		menuCanvas.transform.rotation = mainCam.transform.rotation;
+		
 		holding = holdState.none;
 		if (button == MLInputControllerButton.HomeTap && tutorialActive == true) {
 			tutorialHomePressed = true;
 		} else if (button == MLInputControllerButton.Bumper && tutorialActive == true) {
 			tutorialBumperPressed = true;
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == false) {
+			laserLineRenderer.material = activeMat;
 			menuOpened = true;
 			menu.SetActive (true);
 			//CenterCam();
 			modifierMenu.SetActive(false);
 		} else if (button == MLInputControllerButton.HomeTap && menuOpened == true) {
 			menuOpened = false;
-			menu.SetActive (true);
+			menu.SetActive (false);
 			modifierMenu.SetActive(false);
 		}
 	}

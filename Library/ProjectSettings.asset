@@ -631,11 +631,11 @@ PlayerSettings:
     m_ModelFolderPath: /Users/trevorrose/Desktop/Compete/Icon/BowlingIcon/Icon/Model
     m_PortalFolderPath: /Users/trevorrose/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: /Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert
+    m_CertPath: /Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:
-    m_VersionCode: 5
+    m_VersionCode: 6
     m_VersionName: Compete_Beta
   luminPrivilege:
   - ControllerPose

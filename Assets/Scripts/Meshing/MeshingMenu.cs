@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class MeshingMenu : MonoBehaviour {
 
-	private MLInputController controller;
+	// private MLInputController controller;
 	public GameObject _cam, menu;
 
 	// Use this for initialization
 	void Start () {
 		print("yee");
 		MLInput.Start();
-		controller = MLInput.GetController(MLInput.Hand.Left);
+		
+		// controller = MLInput.GetController(MLInput.Hand.Left);
+
 		MLInput.OnControllerButtonDown += OnButtonDown;
 
 		menu.transform.position = _cam.transform.position + _cam.transform.forward * 2.5f;

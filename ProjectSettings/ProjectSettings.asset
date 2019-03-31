@@ -631,7 +631,7 @@ PlayerSettings:
     m_ModelFolderPath: /Users/trevorrose/Desktop/Compete/Icon/BowlingIcon/Icon/Model
     m_PortalFolderPath: /Users/trevorrose/Desktop/Compete/Icon/BowlingIcon/Icon/Portal
   luminCert:
-    m_CertPath: /Users/trevorrose/Downloads/Compete_PrivateMLWorld/compete-992184d3.cert
+    m_CertPath: /Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert
     m_PrivateKeyPath: 
   luminIsChannelApp: 0
   luminVersion:

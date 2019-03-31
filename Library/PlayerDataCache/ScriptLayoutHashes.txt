@@ -1,6 +1,6 @@
 Lumin
 PlayerPath?
-/Users/trevorrose/Desktop/Compete/Compete_Private.mpk
+/Users/trevorrose/Desktop/Compete/Compete_Release.mpk
 SceneListBegin?
 Assets/Scenes/Meshing.unity
 Assets/Scenes/Main.unity
@@ -247,4 +247,4 @@ b0b280965cfc4ea6ff1605a3f13debaa Assembly-CSharp.dll:.MeshingMenu
 66eb4003e71585f0ef4c23034c2aa3b2 Assembly-CSharp.dll:MagicLeap.VirtualPointer
 08a92322e38205b685c92fa359d21d7a Assembly-CSharp.dll:MagicLeap.MeshingVisualizer
 2c832bb50381ee4d40b2f62c67f06a67 Assembly-CSharp.dll:MagicLeap.DeepSeaExplorerLauncher
-e7770328bf521af59ab5490c46390ae2 Assembly-CSharp.dll:.DartsManager
+a2b05c48a873f2fd8dbf7d50b2831034 Assembly-CSharp.dll:.DartsManager

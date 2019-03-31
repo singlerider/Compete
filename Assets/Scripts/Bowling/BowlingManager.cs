@@ -23,25 +23,40 @@ public class BowlingManager : MonoBehaviour {
 	public static holdState holding = holdState.single;
 	public static menuState currentMenuState;
 
+	// ML-Related objects.  "controller" manages input from the Control and "persistentBehavior" is to manage objects staying in place between session (not yet implemented)
 	private MLInputController controller;
 	public MLPersistentBehavior persistentBehavior;
 
+	// Declare GameObjects.  Public GameObjects are set in Unity Editor.  
 	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube, deleteLoader, menuCanvas;
 	public static GameObject menuControl;
 	private GameObject bowlingBall;
+
 	public Material transparent, activeMat;
+
 	public Material[] ballMats, meshMats;
+
 	public Transform singlePrefab, tenPinPrefab, pinHolder, singleNoGravityPrefab, tenPinNoGravityPrefab, meshHolder;
+
 	public LineRenderer laserLineRenderer;
+
 	public MeshRenderer mesh;
+
 	private Vector3 endPosition, forcePerSecond;
+
 	List<Vector3> Deltas = new List<Vector3> ();
+
 	private float timeHold = 3.0f, totalObjs = 0, objLimit = 50;
+
 	private Controller checkController;
-	public static float growSpeed;
-	public static string ballColor;
+
+	public static float growSpeed = 5f;
+
+
+	//public static string ballColor;
 
 	public Image loadingImage;
+
 	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false, settingsOpened = false, occlusionActive = true;
 	private static bool menuClosed = false;
 
@@ -49,51 +64,58 @@ public class BowlingManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		// If the user is new, open the tutorial menu
 		CheckNewUser ();
+		// Start input from Control and Headpose
 		MLInput.Start ();
 
-		growSpeed = 5f;
-
+		// Get input from the Control, accessible via controller
 		controller = MLInput.GetController (MLInput.Hand.Left);
+		// When the Control's button(s) are pressed, run OnButtonDown
 		MLInput.OnControllerButtonDown += OnButtonDown;
 
 		// Initialize both line points at Vector3.Zero
 		Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
 		laserLineRenderer.SetPositions (initLaserPositions);
 
+		// Access the object menu
 		menuControl = GameObject.Find ("ObjectMenu");
 
 		checkController = control.GetComponentInChildren<Controller> ();
 
+		// Create the bowling ball at (100,100,100) so it cannot be seen by the user but can still be accessed
 		bowlingBall = Instantiate (ballPrefab, new Vector3 (100, 100, 100), tenPinOrientation.transform.rotation);
-
-       // menu.transform.position = mainCam.transform.position + mainCam.transform.forward * 1.0f;
-       // menu.transform.rotation = mainCam.transform.rotation;
 
     }
 	private void OnDestroy () {
 		MLInput.Stop ();
-        //SceneManager.UnloadSceneAsync("Bowling");
     }
 
 	// Update is called once per frame
 	void Update () {
 
+		// Always keep the control GameObject at the Control's position
 		control.transform.position = controller.Position;
 		control.transform.rotation = controller.Orientation;
 
-		//HoldingBall();
+		// If the user is not reading the tutorial menu, activate the line from the Control and prepare for the user to place objects
+
 		if (tutorialActive == false) {
 			SetLine ();
 			PlaceObject ();
 		} else {
+			// TODO: While the tutorial menu is active, either disable the line completely or move it too far from the user to be visible
+			
+			// If the user presses anything while the tutorial is active, hide the tutorial and active the pointer
 			if ((controller.Touch1Active || controller.TriggerValue >= 0.2f || tutorialBumperPressed == true || tutorialHomePressed == true) && tutorialMenuOpened == false) {
 				laserLineRenderer.material = activeMat;
 				CheckNewUser ();
 			}
 		}
+		// If the user is touching the touchpad at all, show the object menu
 		if (controller.Touch1Active) {
 			if (menuClosed == false) {
+				// If the menu is not yet open, open it
 				menuControl.SetActive (true);
 			}
 			if (setHand == false) {
