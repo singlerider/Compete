@@ -1179,14 +1179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee0df22dc5ecb94887329d74598106e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserLineRenderer: {fileID: 0}
+  laserLineRenderer: {fileID: 742979959}
   control: {fileID: 1005085590}
   mainMenu: {fileID: 1513310554}
   privacyPolicyMenu: {fileID: 1361438880}
   joinLobby: {fileID: 0}
   exitLobby: {fileID: 0}
   quitMenu: {fileID: 5974514}
-  mainCam: {fileID: 0}
+  mainCam: {fileID: 742979957}
 --- !u!1 &749233473
 GameObject:
   m_ObjectHideFlags: 0

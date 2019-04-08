@@ -20,6 +20,12 @@ public class BowlingManager : MonoBehaviour {
 		changeBall
 	}
 
+	public enum HandPoses { OpenHandBack, Fist, NoPose };
+	public HandPoses pose = HandPoses.NoPose;
+	public Vector3[] pos;
+
+	private MLHandKeyPose[] _gestures;
+
 	public static holdState holding = holdState.single;
 	public static menuState currentMenuState;
 
@@ -28,7 +34,8 @@ public class BowlingManager : MonoBehaviour {
 	public MLPersistentBehavior persistentBehavior;
 
 	// Declare GameObjects.  Public GameObjects are set in Unity Editor.  
-	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube, deleteLoader, menuCanvas;
+	public GameObject mainCam, orientationCube, control, tenPinOrientation, ballPrefab, menu, ballMenu, modifierMenu, tutorialMenu, controlCube, deleteLoader, menuCanvas, handCenter;
+	public Text pinLimitText;
 	public static GameObject menuControl;
 	private GameObject bowlingBall;
 
@@ -36,7 +43,7 @@ public class BowlingManager : MonoBehaviour {
 
 	public Material[] ballMats, meshMats;
 
-	public Transform singlePrefab, tenPinPrefab, pinHolder, singleNoGravityPrefab, tenPinNoGravityPrefab, meshHolder;
+	public Transform singlePrefab, tenPinPrefab, pinHolder, singleNoGravityPrefab, tenPinNoGravityPrefab, meshHolder, planeHolder;
 
 	public LineRenderer laserLineRenderer;
 
@@ -86,13 +93,23 @@ public class BowlingManager : MonoBehaviour {
 		// Create the bowling ball at (100,100,100) so it cannot be seen by the user but can still be accessed
 		bowlingBall = Instantiate (ballPrefab, new Vector3 (100, 100, 100), tenPinOrientation.transform.rotation);
 
+		MLHands.Start();
+		_gestures = new MLHandKeyPose[2];
+		_gestures[0] = MLHandKeyPose.OpenHandBack;
+		_gestures[1] = MLHandKeyPose.Fist;
+		MLHands.KeyPoseManager.EnableKeyPoses(_gestures, true, false);
+		pos = new Vector3[1];
+
     }
 	private void OnDestroy () {
 		MLInput.Stop ();
+		MLHands.Stop();
     }
 
 	// Update is called once per frame
 	void Update () {
+
+		CheckGestures(); 
 
 		// Always keep the control GameObject at the Control's position
 		control.transform.position = controller.Position;
@@ -148,6 +165,25 @@ public class BowlingManager : MonoBehaviour {
 			tutorialMenuOpened = false;
 		}
 
+	}
+
+	private void CheckGestures() {
+		if (GetGesture(MLHands.Left, MLHandKeyPose.OpenHandBack)) {
+			pose = HandPoses.OpenHandBack;
+		} else {
+			pose = HandPoses.NoPose;
+		}
+
+		if (pose != HandPoses.NoPose) ShowPoints();
+	}
+
+	private void ShowPoints() {
+		if (!handCenter.activeSelf) {
+			handCenter.SetActive(true);
+		}
+		pos[0] = MLHands.Left.Middle.KeyPoints[0].Position;
+		handCenter.transform.position = pos[0];
+		handCenter.transform.LookAt(mainCam.transform.position);
 	}
 	private void SetLine () {
 		RaycastHit rayHit;
@@ -315,6 +351,7 @@ public class BowlingManager : MonoBehaviour {
 
 		totalObjs = 0;
 		holding = holdState.none;
+		GetCount();
 	}
 
 	void OnButtonDown (byte controller_id, MLInputControllerButton button) {
@@ -378,6 +415,7 @@ public class BowlingManager : MonoBehaviour {
 			Transform objectstotal = bowlObj.GetComponentInChildren<Transform> ();
 			totalObjs += objectstotal.childCount;
 		}
+		pinLimitText.text = "Pin Limit:\n " + totalObjs + " of 50";
 	}
 	private void CheckNewUser () {
 		if (PlayerPrefs.GetInt ("hasPlayedBowling") == 1) {
@@ -386,9 +424,21 @@ public class BowlingManager : MonoBehaviour {
 			laserLineRenderer.material = activeMat;
 			tutorialMenu.SetActive (false);
 		} else {
+			Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
+			laserLineRenderer.SetPositions (initLaserPositions);
 			print ("Not Played");
 			tutorialMenu.SetActive (true);
 			PlayerPrefs.SetInt ("hasPlayedBowling", 1);
 		}
 	}
+	private bool GetGesture(MLHand hand, MLHandKeyPose type) {
+        if (hand != null) {				
+            if (hand.KeyPose == type) {
+                if (hand.KeyPoseConfidence > 0.9f) {                       
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

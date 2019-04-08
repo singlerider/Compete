@@ -12,9 +12,15 @@ public class DartsManager : MonoBehaviour {
 		dart,
 		dartboard
 	}
+
+	public enum HandPoses {OpenHandBack, Fist, NoPose};
+	public HandPoses pose = HandPoses.NoPose;
+	public Vector3[] pos;
+	private MLHandKeyPose[] _gestures;
 	public static holdState holding = holdState.none;
 	private MLInputController controller;
-	public GameObject mainCam, control, dartPrefab, dartboardHolder, menu, modifierMenu, tutorialMenu, dartMenu, dartboard, deleteLoader, menuCanvas;
+	public GameObject mainCam, control, dartPrefab, dartboardHolder, menu, modifierMenu, tutorialMenu, dartMenu, dartboard, deleteLoader, menuCanvas, handCenter;
+	public Text dartLimitText;
 	public Transform dartHolder, meshHolder;
 	public static GameObject menuControl;
 	private GameObject dart;
@@ -23,7 +29,7 @@ public class DartsManager : MonoBehaviour {
 	public LineRenderer laserLineRenderer;
 	public MeshRenderer mesh;
 	private Vector3 endPosition, forcePerSecond;
-	private float timeHold = 3.0f, totalObjs = 0, objLimit = 15;
+	private float timeHold = 3.0f, totalObjs = 0, objLimit = 20;
 	private Controller checkController;
 
 	public Image loadingImage;
@@ -47,15 +53,24 @@ public class DartsManager : MonoBehaviour {
 		menuControl = GameObject.Find ("ObjectMenu");
 		checkController = control.GetComponentInChildren<Controller> ();
 
+		MLHands.Start();
+		_gestures = new MLHandKeyPose[2];
+		_gestures[0] = MLHandKeyPose.OpenHandBack;
+		_gestures[1] = MLHandKeyPose.Fist;
+		MLHands.KeyPoseManager.EnableKeyPoses(_gestures, true, false);
+		pos = new Vector3[1];
 	}
 
 	private void OnDestroy () {
 		MLInput.Stop ();
         SceneManager.UnloadSceneAsync("Darts");
+		MLHands.Stop();
     }
 
 	// Update is called once per frame
 	void Update () {
+
+		CheckGestures();
 		control.transform.position = controller.Position;
 		control.transform.rotation = controller.Orientation;
 		if (tutorialActive == false) {
@@ -101,6 +116,23 @@ public class DartsManager : MonoBehaviour {
 		if (controller.TriggerValue <= 0.2f && tutorialMenuOpened == true) {
 			tutorialMenuOpened = false;
 		}
+	}
+	private void CheckGestures() {
+		if (GetGesture(MLHands.Left, MLHandKeyPose.OpenHandBack)) {
+			pose = HandPoses.OpenHandBack;
+		} else {
+			pose = HandPoses.NoPose;
+		}
+
+		if (pose != HandPoses.NoPose) ShowPoints();
+	}
+	private void ShowPoints() {
+		if (!handCenter.activeSelf) {
+			handCenter.SetActive(true);
+		}
+		pos[0] = MLHands.Left.Middle.KeyPoints[0].Position;
+		handCenter.transform.position = pos[0];
+		handCenter.transform.LookAt(mainCam.transform.position);
 	}
 	private void SetLine () {
 		RaycastHit rayHit;
@@ -306,6 +338,7 @@ public class DartsManager : MonoBehaviour {
 		}
 		totalObjs = 0;
 		holding = holdState.none;
+		GetCount();
 	}
 	public static void CloseMenu () {
 		print ("Close the menu");
@@ -318,6 +351,7 @@ public class DartsManager : MonoBehaviour {
 			Transform objectstotal = dartObj.GetComponentInChildren<Transform> ();
 			totalObjs += objectstotal.childCount;
 		}
+		dartLimitText.text = "Dart Limit:\n " + totalObjs + " of 20";
 	}
 	private void CheckNewUser() {
 		if (PlayerPrefs.GetInt("hasPlayedDarts") == 1) {
@@ -325,6 +359,8 @@ public class DartsManager : MonoBehaviour {
 			tutorialActive = false;
 			tutorialMenu.SetActive(false);
 		} else {
+			Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
+			laserLineRenderer.SetPositions (initLaserPositions);
 			print("Not Played");
 			tutorialMenu.SetActive(true);
 			PlayerPrefs.SetInt("hasPlayedDarts", 1);
@@ -342,5 +378,15 @@ public class DartsManager : MonoBehaviour {
             Quaternion rot = Quaternion.LookRotation(menu.transform.position - mainCam.transform.position);
             menu.transform.rotation = Quaternion.Slerp(menu.transform.rotation, rot, speed);
         }
+    }
+	private bool GetGesture(MLHand hand, MLHandKeyPose type) {
+        if (hand != null) {				
+            if (hand.KeyPose == type) {
+                if (hand.KeyPoseConfidence > 0.9f) {                       
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

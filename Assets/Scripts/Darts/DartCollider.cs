@@ -12,10 +12,6 @@ public class DartCollider : MonoBehaviour {
 		dartAudio = this.GetComponent<AudioSource>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 	private void OnCollisionEnter(Collision other) {
 		dartRB.velocity = Vector3.zero;
 		dartRB.isKinematic = true;
