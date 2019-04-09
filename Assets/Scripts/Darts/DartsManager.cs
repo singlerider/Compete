@@ -29,12 +29,12 @@ public class DartsManager : MonoBehaviour {
 	public LineRenderer laserLineRenderer;
 	public MeshRenderer mesh;
 	private Vector3 endPosition, forcePerSecond;
-	private float timeHold = 3.0f, totalObjs = 0, objLimit = 20;
+	private float timeHold = 3.0f, totalObjs = 0, objLimit = 20, timeHomePress = 0.5f, timeOfFirstHomePress;
 	private Controller checkController;
 
 	public Image loadingImage;
 
-	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, movingDartboard = true, settingsOpened = false, occlusionActive = true, tutorialMenuOpened = false;
+	private bool setHand = false, holdingDart = false, tutorialActive = true, noGravity = false, dartMenuOpened = false, holdingDartMenu = true, tutorialBumperPressed, tutorialHomePressed, movingDartboard = true, settingsOpened = false, occlusionActive = true, tutorialMenuOpened = false, firstHomePressed = false;
 	private static bool menuClosed = false, menuOpened = false;
 	public static bool lockedDartboard = false;
 	List<Vector3> Deltas = new List<Vector3> ();
@@ -330,6 +330,17 @@ public class DartsManager : MonoBehaviour {
 			menuOpened = false;
 			menu.SetActive (false);
 			modifierMenu.SetActive(false);
+		}
+
+		if (button == MLInputControllerButton.HomeTap && firstHomePressed) {
+			if (Time.time - timeOfFirstHomePress < timeHomePress) {
+				Application.Quit();
+				timeOfFirstHomePress = 0f;
+			}
+			firstHomePressed = false;
+		} else if (button == MLInputControllerButton.HomeTap && !firstHomePressed) {
+			firstHomePressed = true;
+			timeOfFirstHomePress = Time.time;
 		}
 	}
 	private void ClearAllObjects () {

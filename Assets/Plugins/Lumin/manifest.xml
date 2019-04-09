@@ -26,26 +26,26 @@ Set Up Music Service Example in the MagicLeap drop down menu in the Unity Editor
 <!--
 Unity will automatically fill in areas marked as Placeholder from the Player Settings.
 -->
-<manifest xmlns:ml="magicleap" ml:package="Placeholder" ml:version_code="1" ml:version_name="">
-  <application ml:min_api_level="4" ml:sdk_version="1.0" ml:visible_name="Placeholder">
+<manifest xmlns:ml="magicleap" ml:package="Compete" ml:version_code="11" ml:version_name="Compete">
+  <application ml:min_api_level="4" ml:sdk_version="1.0" ml:visible_name="Compete">
     <!--Examples using AddressBookRead: Contacts-->
-    <uses-privilege ml:name="AddressBookRead" />
+    <!-- <uses-privilege ml:name="AddressBookRead" /> -->
     <!--Examples using AddressBookWrite: Contacts-->
-    <uses-privilege ml:name="AddressBookWrite" />
+    <!-- <uses-privilege ml:name="AddressBookWrite" /> -->
     <!--Examples using AudioCaptureMic: VideoCapture, AudioCapture-->
-    <uses-privilege ml:name="AudioCaptureMic" />
+    <!-- <uses-privilege ml:name="AudioCaptureMic" /> -->
     <!--Examples using CameraCapture: ImageCapture, ImageTracking, VideoCapture, LightTracking-->
-    <uses-privilege ml:name="CameraCapture" />
+    <!-- <uses-privilege ml:name="CameraCapture" /> -->
     <!--Examples using GesturesSubscribe: HandTracking-->
     <uses-privilege ml:name="GesturesSubscribe" />
     <!--Examples using GesturesConfig: HandTracking-->
     <uses-privilege ml:name="GesturesConfig" />
     <!--Examples using Internet: MediaPlayer, Screens-->
-    <uses-privilege ml:name="Internet" />
+    <!-- <uses-privilege ml:name="Internet" /> -->
     <!--Examples using PwFoundObjRead: Persistence-->
-    <uses-privilege ml:name="PwFoundObjRead" />
+    <!-- <uses-privilege ml:name="PwFoundObjRead" /> -->
     <!--Examples using ScreensProvider: Screens-->
-    <uses-privilege ml:name="ScreensProvider" />
+    <!-- <uses-privilege ml:name="ScreensProvider" /> -->
     <!--Examples using WorldReconstruction: Meshing, Planes, Raycast, Placement, LightTracking, Vignette-->
     <uses-privilege ml:name="WorldReconstruction" />
     <!--Examples using ControllerPose: Contacts, Controller, Persistence, ImageTracking, ImageCapture, InputModule, VideoCapture, AudioCapture, LightTracking, MediaPlayer, Meshing, Planes, Raycast, Placement, Vignette, WorldScale_Centimeters, WorldScale_Meters-->

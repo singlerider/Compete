@@ -53,7 +53,7 @@ public class BowlingManager : MonoBehaviour {
 
 	List<Vector3> Deltas = new List<Vector3> ();
 
-	private float timeHold = 3.0f, totalObjs = 0, objLimit = 50;
+	private float timeHold = 3.0f, totalObjs = 0, objLimit = 50, timeHomePress = 0.5f, timeOfFirstHomePress;
 
 	private Controller checkController;
 
@@ -64,7 +64,7 @@ public class BowlingManager : MonoBehaviour {
 
 	public Image loadingImage;
 
-	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false, settingsOpened = false, occlusionActive = true;
+	private bool setHand = false, placed = false, holdingBall = false, menuOpened = false, ballMenuOpened = false, holdingBallMenu = true, noGravity = false, tutorialActive = true, tutorialBumperPressed, tutorialHomePressed, tutorialMenuOpened = false, settingsOpened = false, occlusionActive = true, firstHomePressed = false;
 	private static bool menuClosed = false;
 
 
@@ -148,6 +148,10 @@ public class BowlingManager : MonoBehaviour {
 			setHand = false;
 			menuControl.SetActive (false);
 		}
+
+
+		// yee yee
+
 		if ((checkController.bumperTimer.getTime() >= 0) && (checkController.bumperTimer.getTime() < timeHold)) {
 			deleteLoader.SetActive(true);
 			float currentTime = checkController.bumperTimer.getTime();
@@ -375,6 +379,17 @@ public class BowlingManager : MonoBehaviour {
 			// If the user presses the Home button and the menu is opened, then close the menu
 			menu.SetActive (false);
 			menuOpened = false;
+		}
+
+		if (button == MLInputControllerButton.HomeTap && firstHomePressed) {
+			if (Time.time - timeOfFirstHomePress < timeHomePress) {
+				Application.Quit();
+				timeOfFirstHomePress = 0f;
+			}
+			firstHomePressed = false;
+		} else if (button == MLInputControllerButton.HomeTap && !firstHomePressed) {
+			firstHomePressed = true;
+			timeOfFirstHomePress = Time.time;
 		}
 	}
 	private void SpawnObject () {

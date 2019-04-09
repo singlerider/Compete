@@ -17,12 +17,12 @@ public class MainMenu : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		float speed = Time.deltaTime * 5f;
+		// float speed = Time.deltaTime * 5f;
 
-		Vector3 pos = _cam.transform.position + _cam.transform.forward * 1.0f;
-		menu.transform.position = Vector3.SlerpUnclamped (menu.transform.position, pos, speed);
+		// Vector3 pos = _cam.transform.position + _cam.transform.forward * 1.0f;
+		// menu.transform.position = Vector3.SlerpUnclamped (menu.transform.position, pos, speed);
 
-		Quaternion rot = Quaternion.LookRotation (menu.transform.position - _cam.transform.position);
-		menu.transform.rotation = Quaternion.Slerp (menu.transform.rotation, rot, speed);
+		// Quaternion rot = Quaternion.LookRotation (menu.transform.position - _cam.transform.position);
+		// menu.transform.rotation = Quaternion.Slerp (menu.transform.rotation, rot, speed);
 	}
 }

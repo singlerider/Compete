@@ -1,23 +1,23 @@
-<manifest xmlns:ml="magicleap" ml:developer_id="14c938f1-4b2d-43f6-bc52-aea702880c34" ml:package="com.leapahead.compete" ml:version_code="1" ml:version_name="">
+<manifest xmlns:ml="magicleap" ml:developer_id="14c938f1-4b2d-43f6-bc52-aea702880c34" ml:package="com.leapahead.compete" ml:version_code="11" ml:version_name="Compete">
   <application ml:min_api_level="4" ml:sdk_version="1.0" ml:visible_name="Compete">
     
-    <uses-privilege ml:name="AddressBookRead" />
     
-    <uses-privilege ml:name="AddressBookWrite" />
     
-    <uses-privilege ml:name="AudioCaptureMic" />
     
-    <uses-privilege ml:name="CameraCapture" />
+    
+    
+    
+    
     
     <uses-privilege ml:name="GesturesSubscribe" />
     
     <uses-privilege ml:name="GesturesConfig" />
     
-    <uses-privilege ml:name="Internet" />
     
-    <uses-privilege ml:name="PwFoundObjRead" />
     
-    <uses-privilege ml:name="ScreensProvider" />
+    
+    
+    
     
     <uses-privilege ml:name="WorldReconstruction" />
     
