@@ -2,29 +2,29 @@
  "entries": [
   {
    "compression": 8,
-   "hash": "c9184bba3a739322c7ed5c4aaa451dbb78dcd2f6",
+   "hash": "0421d1bcacb95c6d27854a618f12107792cbab80",
    "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
-   "size": 3756916,
+   "size": 3757188,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
   },
   {
    "compression": 8,
-   "hash": "ca40a5b72abdb8c273fdd10628bcff70ef7f8623",
+   "hash": "2c184e5520f60f67418efd949e5922424c9db7df",
    "pkgpath": "bin/libil2cpp.so",
-   "size": 60107312,
+   "size": 60109160,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/Native/libil2cpp.so",
    "xfrm_flags": {
     "signed": {
-     "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+     "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
     },
     "taildata": {
      "sbox": "USER",
      "version": 3
     }
    },
-   "xfrm_hash": "ef24f3bdeafc4d3e5bcc4134e8e3c1db377c18b8",
+   "xfrm_hash": "232a3325aebf7592383e4a2922f3cf66ff7ec30c",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/libil2cpp.so-1d29f3ad7f17fa08",
-   "xfrm_size": 60108070
+   "xfrm_size": 60109925
   },
   {
    "compression": 8,
@@ -34,16 +34,16 @@
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/Plugins/AudioPluginMSASpatializer.so",
    "xfrm_flags": {
     "signed": {
-     "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+     "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
     },
     "taildata": {
      "sbox": "USER",
      "version": 3
     }
    },
-   "xfrm_hash": "8207454d8dc6b43217be4fe94aafdb925952b083",
+   "xfrm_hash": "6590d82af4c3f09331796b98cabb8d48cd887792",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/AudioPluginMSASpatializer.so-190c120cd5145fff",
-   "xfrm_size": 270118
+   "xfrm_size": 270125
   },
   {
    "compression": 8,
@@ -60,16 +60,16 @@
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/Plugins/UnityMagicLeap.so",
    "xfrm_flags": {
     "signed": {
-     "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+     "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
     },
     "taildata": {
      "sbox": "USER",
      "version": 3
     }
    },
-   "xfrm_hash": "b1de05757282876708c2ca8710fd9ad58296c884",
+   "xfrm_hash": "a79c8679daa65540196196f45815b38669bf8598",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/UnityMagicLeap.so-190c120cd5145fff",
-   "xfrm_size": 1496558
+   "xfrm_size": 1496565
   },
   {
    "compression": 8,
@@ -79,16 +79,16 @@
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/Plugins/libml_camera_plugin.so",
    "xfrm_flags": {
     "signed": {
-     "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+     "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
     },
     "taildata": {
      "sbox": "USER",
      "version": 3
     }
    },
-   "xfrm_hash": "755860f38cc5b323c946663c3ae5d3a57745b6f2",
+   "xfrm_hash": "54c118fbfe53fb082fd3824c154cf9640b4c7e42",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/libml_camera_plugin.so-190c120cd5145fff",
-   "xfrm_size": 14942
+   "xfrm_size": 14949
   },
   {
    "compression": 8,
@@ -98,16 +98,16 @@
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/Plugins/libml_mediaplayer_plugin.so",
    "xfrm_flags": {
     "signed": {
-     "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+     "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
     },
     "taildata": {
      "sbox": "USER",
      "version": 3
     }
    },
-   "xfrm_hash": "45eaa50589b4b5cf0ba2691122bd696d6356fb0c",
+   "xfrm_hash": "7ea78ff1550f05d684fc2c96d6ada90f78dafd07",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/libml_mediaplayer_plugin.so-190c120cd5145fff",
-   "xfrm_size": 68382
+   "xfrm_size": 68389
   },
   {
    "compression": 8,
@@ -153,23 +153,23 @@
   },
   {
    "compression": 8,
-   "hash": "56985ffbe2bc5449b4c06384a934e610120a73bf",
+   "hash": "73dd0a2a3c69a275fae17597bcaf35f809c45284",
    "pkgpath": "Data/globalgamemanagers",
-   "size": 52784,
+   "size": 52832,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/globalgamemanagers"
   },
   {
    "compression": 8,
-   "hash": "9d16f86773d46a1da82ae4c25a3980fa31323480",
+   "hash": "3260f763baaefa400972087f4b5c15516ba5b590",
    "pkgpath": "Data/globalgamemanagers.assets",
-   "size": 61132,
+   "size": 61228,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/globalgamemanagers.assets"
   },
   {
    "compression": 8,
-   "hash": "d0694f571f7b1f76fc939cab21e0f7cc82c72c32",
+   "hash": "277eaa153bc8de815c841a77c7fbd9391906d2dd",
    "pkgpath": "Data/level0",
-   "size": 7644,
+   "size": 7692,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/level0"
   },
   {
@@ -181,14 +181,14 @@
   },
   {
    "compression": 8,
-   "hash": "0ea8e5edc4d6b907453cfcd5f75aa62faeff92b2",
+   "hash": "f719d569ba68d22e6fe040306c2699ff903028b5",
    "pkgpath": "Data/level1",
    "size": 15652,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/level1"
   },
   {
    "compression": 8,
-   "hash": "2596edf6fb470b0170a200dd479427ac3d31c2f7",
+   "hash": "cdf41ebf8eac25430d0adb1b06548558635965d0",
    "pkgpath": "Data/level2",
    "size": 31260,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/level2"
@@ -202,7 +202,7 @@
   },
   {
    "compression": 8,
-   "hash": "c22fe939e293312b9fbf6c3b60cf1b71320c8413",
+   "hash": "709bf9a232c3afb90ce66901bb00b31a4b1836ce",
    "pkgpath": "Data/level3",
    "size": 23724,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/level3"
@@ -216,7 +216,7 @@
   },
   {
    "compression": 8,
-   "hash": "1dad83b624bbb68f4719fe69a42075e202122613",
+   "hash": "1adcc6255b6a939f9dd887c1d543788c6bdf0b8d",
    "pkgpath": "Data/resources.assets",
    "size": 874992,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/resources.assets"
@@ -230,14 +230,14 @@
   },
   {
    "compression": 8,
-   "hash": "13698e8bdb4edaead79c63983fa6d534a2aa143e",
+   "hash": "1a6ecd78b2a3133714beaadd8d12f076289429d1",
    "pkgpath": "Data/sharedassets0.assets",
-   "size": 440374,
+   "size": 440390,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/sharedassets0.assets"
   },
   {
    "compression": 8,
-   "hash": "43a16759db30c9fe7419e8a13bee112c4fed01ff",
+   "hash": "02cd347119099b7f3fb6bce696fac1bfca4e20ab",
    "pkgpath": "Data/sharedassets1.assets",
    "size": 1017114,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/sharedassets1.assets"
@@ -251,7 +251,7 @@
   },
   {
    "compression": 8,
-   "hash": "b328d5d3f5e3afa688efb238a3204df6e519b850",
+   "hash": "9641fe25cfe23125963dda5db9c6a1f36b29dcfe",
    "pkgpath": "Data/sharedassets2.assets",
    "size": 656924,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/sharedassets2.assets"
@@ -272,7 +272,7 @@
   },
   {
    "compression": 8,
-   "hash": "15baa850b6e278536958b1e5c198c0f34fd2ae8f",
+   "hash": "e1c036124ec2c8abe34885d8969b00e797e436dc",
    "pkgpath": "Data/sharedassets3.assets",
    "size": 238832,
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Data/sharedassets3.assets"
@@ -341,16 +341,16 @@
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/Player.elf",
    "xfrm_flags": {
     "signed": {
-     "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+     "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
     },
     "taildata": {
      "sbox": "USER",
      "version": 3
     }
    },
-   "xfrm_hash": "ae30df5107c57f7ece439be335a630cb648dab7a",
+   "xfrm_hash": "a2be4cf263da594a0fa20afad3bfdf0395e7c05d",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/Player.elf-29ea17b6bb32e4e3",
-   "xfrm_size": 19670750
+   "xfrm_size": 19670757
   },
   {
    "compression": 8,
@@ -360,13 +360,13 @@
    "src": "/Users/trevorrose/Desktop/Compete/Temp/StagingArea/manifest.xml",
    "xfrm_flags": {
     "manifest": {
-     "cert_hash": "e598875791efb18b6739e93d099b51fbd81ac6b1",
-     "developer_id": "14c938f1-4b2d-43f6-bc52-aea702880c34"
+     "cert_hash": "d9e24ea24033e989d07a8617b9fa41b289cfb3f9",
+     "developer_id": "1bf1ba1a-ddcc-4dfc-bccd-ebfeaab6b665.c3eda2a7-009e-4518-9161-034a8c81d6b3"
     }
    },
-   "xfrm_hash": "09e33af47ef75eff6e6045242b33d4c0ec835800",
+   "xfrm_hash": "2c368f44473d8054b41b8334c5da9cea06f664bb",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/manifest.xml-29ea17b6bb32e4e3",
-   "xfrm_size": 833
+   "xfrm_size": 870
   },
   {
    "compression": 8,
@@ -376,24 +376,24 @@
    "src": "/Users/trevorrose/MagicLeap/mlsdk/v0.20.0/lumin/stl/libc++/lib/libc++_shared.so",
    "xfrm_flags": {
     "signed": {
-     "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+     "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
     },
     "taildata": {
      "sbox": "USER",
      "version": 3
     }
    },
-   "xfrm_hash": "b8b93f40345d6b00fcbc784a1e4bf99a11562d98",
+   "xfrm_hash": "3cc8e9d359122937c7aa0b0dcc25fd84d5ef49e5",
    "xfrm_path": "/Users/trevorrose/Desktop/Compete/.out/.cache/release_lumin_clang-3.8_aarch64/com.leapahead.compete-25e8880837e1ab51/libc++_shared.so-5fae78d35d62b348",
-   "xfrm_size": 977590
+   "xfrm_size": 977597
   }
  ],
  "pkgflags": {
   "signed": {
-   "cert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert"
+   "cert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert"
   },
   "taildata": {
-   "devcert": "/Users/trevorrose/Downloads/privatekey/trevor'smacbookair.cert",
+   "devcert": "/Users/trevorrose/Downloads/Compete_Public_ReleaseKey/compete-c3eda2a7.cert",
    "sbox": "USER",
    "version": 3
   }

@@ -144,6 +144,7 @@
      <Compile Include="Assets\MagicLeap\Examples\Scripts\Visualizers\VideoCaptureVisualizer.cs" />
      <Compile Include="Assets\MagicLeap\Examples\Scripts\WorldScaleExample.cs" />
      <Compile Include="Assets\MagicLeap\Scripts\MLVersion.cs" />
+     <Compile Include="Assets\MeshContinue.cs" />
      <Compile Include="Assets\PlaneExtract.cs" />
      <Compile Include="Assets\Scripts\Bowling\BallHitDetector.cs" />
      <Compile Include="Assets\Scripts\Bowling\BallVelocity.cs" />
