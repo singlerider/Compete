@@ -1885,4 +1885,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Main.unity
   - Assets/Scenes/Bowling.unity
   - Assets/Scenes/Darts.unity
-  playerPath: /Users/trevorrose/Desktop/Compete/Compete_Dev.mpk
+  playerPath: /Users/trevorrose/Desktop/Compete/Compete_Release.mpk
