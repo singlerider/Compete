@@ -53,52 +53,52 @@
 
 ----- il2cpp Statistics -----
 General:
-	Conversion Time: 46.05 s
+	Conversion Time: 44.178 s
 	Files Written: 186
-	String Literals: 5778
+	String Literals: 5779
 Methods:
-	Total Methods: 35103
-	Non-Generic Methods: 20545
+	Total Methods: 35111
+	Non-Generic Methods: 20553
 	Generic Type Methods: 12341
 	Generic Methods: 2217
 	Shared Methods: 14536
 	Methods with Tail Calls : 0
 Metadata:
-	Total: 3,668.87 kb
-	String Literals: 45.14 kb
+	Total: 3,669.73 kb
+	String Literals: 45.15 kb
 	String Literal Data: 178.34 kb
-	Metadata Strings: 460.66 kb
+	Metadata Strings: 460.70 kb
 	Events: 1.88 kb
-	Properties: 75.49 kb
-	Methods: 698.56 kb
+	Properties: 75.53 kb
+	Methods: 698.81 kb
 	Parameter Default Values: 1.00 kb
 	Field Default Values: 63.43 kb
 	Field and Parameter Default Values Data: 87.04 kb
-	Field Marshaled Sizes: 13.15 kb
-	Parameters: 290.46 kb
-	Fields: 178.30 kb
+	Field Marshaled Sizes: 13.16 kb
+	Parameters: 290.47 kb
+	Fields: 178.34 kb
 	Generic Parameters: 7.23 kb
 	Generic Parameter Constraints: 0.32 kb
 	Generic Containers: 5.86 kb
 	Nested Types: 3.63 kb
-	Interfaces: 4.55 kb
-	VTables: 138.79 kb
-	Interface Offsets: 31.01 kb
-	Type Definitions: 328.29 kb
+	Interfaces: 4.56 kb
+	VTables: 138.83 kb
+	Interface Offsets: 31.03 kb
+	Type Definitions: 328.38 kb
 	Images: 1.88 kb
 	Assemblies: 3.19 kb
-	Metadata Usage Lists: 276.86 kb
-	Metadata Usage Pairs: 637.04 kb
+	Metadata Usage Lists: 276.93 kb
+	Metadata Usage Pairs: 637.16 kb
 	Field Refs: 1.14 kb
 	Referenced Assemblies: 0.92 kb
-	Attribute Types Ranges: 71.18 kb
-	Attribute Types: 45.34 kb
+	Attribute Types Ranges: 71.26 kb
+	Attribute Types: 45.36 kb
 	Unresolved Virtual Call Parameter Types: 7.27 kb
 	Unresolved Virtual Call Parameter Ranges: 4.79 kb
 	Windows Runtime type names: 0.00 kb
 	Exported Types: 6.16 kb
 Codegen:
-	NullChecks : 63072
+	NullChecks : 63088
 Hashing:
 	String Literal Hash Collisions : 0
 	Type Hash Collisions : 0
@@ -115,71 +115,71 @@ Interop:
 	COM callable wrapper methods that were forwarded to call base class method : 0
 Compilation:
 	Total Files: 218
-	Files Compiled: 0
-	Cache Hits: 218
-	Cache Hit %: 100
+	Files Compiled: 1
+	Cache Hits: 217
+	Cache Hit %: 99
 
 
 ----Assembly Conversion Times----
-	Convert Assembly-CSharp (1054.70739746094ms)
-	Convert com.unity.multiplayer-hlapi.Runtime (1436.73193359375ms)
-	Convert LuminMediaPlayer (334.621520996094ms)
-	Convert LuminUnity (1823.83581542969ms)
-	Convert Mono.Security (24.0093841552734ms)
-	Convert MSA.Runtime (60.2626686096191ms)
-	Convert mscorlib (6663.9443359375ms)
-	Convert netstandard (0.859846949577332ms)
-	Convert System (1191.65795898438ms)
-	Convert System.Configuration (9.35145092010498ms)
-	Convert System.Core (4.1647777557373ms)
-	Convert System.Diagnostics.StackTrace (0.798879981040955ms)
-	Convert System.Globalization.Extensions (0.793206989765167ms)
-	Convert System.Xml (11.5738487243652ms)
-	Convert Unity.TextMeshPro (2062.0302734375ms)
-	Convert UnityEngine (0.976761996746063ms)
-	Convert UnityEngine.AIModule (5.09097528457642ms)
-	Convert UnityEngine.AnimationModule (60.3351974487305ms)
-	Convert UnityEngine.ARModule (5.18526935577393ms)
-	Convert UnityEngine.AssetBundleModule (6.95107460021973ms)
-	Convert UnityEngine.AudioModule (36.2106552124023ms)
-	Convert UnityEngine.CoreModule (857.769775390625ms)
-	Convert UnityEngine.DirectorModule (2.79279804229736ms)
-	Convert UnityEngine.GridModule (1.48936700820923ms)
-	Convert UnityEngine.ImageConversionModule (2.40061211585999ms)
-	Convert UnityEngine.IMGUIModule (313.457214355469ms)
-	Convert UnityEngine.InputModule (8.19079303741455ms)
-	Convert UnityEngine.JSONSerializeModule (5.97722101211548ms)
-	Convert UnityEngine.LuminModule (3.21166110038757ms)
-	Convert UnityEngine.ParticleSystemModule (18.0036201477051ms)
-	Convert UnityEngine.Physics2DModule (41.8668937683105ms)
-	Convert UnityEngine.PhysicsModule (48.6125602722168ms)
-	Convert UnityEngine.SharedInternalsModule (30.3446445465088ms)
-	Convert UnityEngine.SpatialTracking (32.4846458435059ms)
-	Convert UnityEngine.TerrainModule (44.3682594299316ms)
-	Convert UnityEngine.TextRenderingModule (34.1626052856445ms)
-	Convert UnityEngine.TilemapModule (16.3404903411865ms)
-	Convert UnityEngine.UI (1791.69494628906ms)
-	Convert UnityEngine.UIElementsModule (16.2770366668701ms)
-	Convert UnityEngine.UIModule (37.4951667785645ms)
-	Convert UnityEngine.UNETModule (250.616973876953ms)
-	Convert UnityEngine.UnityAnalyticsModule (10.6467123031616ms)
-	Convert UnityEngine.UnityWebRequestModule (84.4324645996094ms)
-	Convert UnityEngine.VFXModule (10.2709999084473ms)
-	Convert UnityEngine.VideoModule (19.0737190246582ms)
-	Convert UnityEngine.VRModule (4.02942323684692ms)
-	Convert UnityEngine.XR.MagicLeap (140.979629516602ms)
-	Convert UnityEngine.XRModule (94.4131546020508ms)
+	Convert Assembly-CSharp (1047.18212890625ms)
+	Convert com.unity.multiplayer-hlapi.Runtime (1249.93701171875ms)
+	Convert LuminMediaPlayer (339.489440917969ms)
+	Convert LuminUnity (1758.23449707031ms)
+	Convert Mono.Security (22.9487743377686ms)
+	Convert MSA.Runtime (59.2977676391602ms)
+	Convert mscorlib (6695.9462890625ms)
+	Convert netstandard (0.829769015312195ms)
+	Convert System (1294.05212402344ms)
+	Convert System.Configuration (9.72442436218262ms)
+	Convert System.Core (4.05193376541138ms)
+	Convert System.Diagnostics.StackTrace (1.20774602890015ms)
+	Convert System.Globalization.Extensions (0.82594096660614ms)
+	Convert System.Xml (7.42453384399414ms)
+	Convert Unity.TextMeshPro (1926.72290039063ms)
+	Convert UnityEngine (1.16434299945831ms)
+	Convert UnityEngine.AIModule (3.2943959236145ms)
+	Convert UnityEngine.AnimationModule (56.5727119445801ms)
+	Convert UnityEngine.ARModule (3.99904680252075ms)
+	Convert UnityEngine.AssetBundleModule (7.11846494674683ms)
+	Convert UnityEngine.AudioModule (34.6356735229492ms)
+	Convert UnityEngine.CoreModule (797.881103515625ms)
+	Convert UnityEngine.DirectorModule (3.07640290260315ms)
+	Convert UnityEngine.GridModule (1.45653295516968ms)
+	Convert UnityEngine.ImageConversionModule (2.60726094245911ms)
+	Convert UnityEngine.IMGUIModule (273.186370849609ms)
+	Convert UnityEngine.InputModule (10.0628719329834ms)
+	Convert UnityEngine.JSONSerializeModule (9.53764247894287ms)
+	Convert UnityEngine.LuminModule (2.69011783599854ms)
+	Convert UnityEngine.ParticleSystemModule (25.5038452148438ms)
+	Convert UnityEngine.Physics2DModule (40.306713104248ms)
+	Convert UnityEngine.PhysicsModule (47.9605865478516ms)
+	Convert UnityEngine.SharedInternalsModule (30.1931171417236ms)
+	Convert UnityEngine.SpatialTracking (30.8960838317871ms)
+	Convert UnityEngine.TerrainModule (40.9881935119629ms)
+	Convert UnityEngine.TextRenderingModule (32.819164276123ms)
+	Convert UnityEngine.TilemapModule (15.3444671630859ms)
+	Convert UnityEngine.UI (1548.294921875ms)
+	Convert UnityEngine.UIElementsModule (15.0092287063599ms)
+	Convert UnityEngine.UIModule (32.7828941345215ms)
+	Convert UnityEngine.UNETModule (213.637069702148ms)
+	Convert UnityEngine.UnityAnalyticsModule (23.6841335296631ms)
+	Convert UnityEngine.UnityWebRequestModule (84.0120162963867ms)
+	Convert UnityEngine.VFXModule (10.2684135437012ms)
+	Convert UnityEngine.VideoModule (19.1489372253418ms)
+	Convert UnityEngine.VRModule (5.63520622253418ms)
+	Convert UnityEngine.XR.MagicLeap (130.085662841797ms)
+	Convert UnityEngine.XRModule (88.575309753418ms)
 
 ----Misc Timing----
-	PreProcessStage: 706.318237304688
+	PreProcessStage: 755.906616210938
 	GenericsCollector.Collect: None
-	WriteGenerics: 11796.814453125
-	AllAssemblyConversion: 19346.1015625
+	WriteGenerics: 11033.6044921875
+	AllAssemblyConversion: 18645.25
 
 ----Generated Files----
 Assembly-CSharp.cpp	2093482
-Assembly-CSharp1.cpp	2249804
-Assembly-CSharp2.cpp	1068482
+Assembly-CSharp1.cpp	2196708
+Assembly-CSharp2.cpp	1141340
 com.unity.multiplayer-hlapi.Runtime.cpp	1990182
 com.unity.multiplayer-hlapi.Runtime1.cpp	1879596
 com.unity.multiplayer-hlapi.Runtime2.cpp	1919443
@@ -217,11 +217,11 @@ Generics6.cpp	1990908
 Generics7.cpp	1865498
 Generics8.cpp	1849710
 Generics9.cpp	1770690
-Il2CppAttributes.cpp	6208193
+Il2CppAttributes.cpp	6213417
 Il2CppCodeRegistration.cpp	7581
 Il2CppCompilerCalculateTypeValues.cpp	4587204
-Il2CppCompilerCalculateTypeValues1.cpp	5006548
-Il2CppCompilerCalculateTypeValuesTable.cpp	547264
+Il2CppCompilerCalculateTypeValues1.cpp	5009224
+Il2CppCompilerCalculateTypeValuesTable.cpp	547441
 Il2CppGenericComDefinitions.cpp	193
 Il2CppGenericMethodPointerTable.cpp	3608285
 Il2CppInteropDataTable.cpp	250550
@@ -309,5 +309,7 @@ UnityEngine.XR.MagicLeap.cpp	691269
 UnityEngine.XRModule.cpp	516994
 UnresolvedVirtualCallStubs.cpp	540294
 
-4
+cpp	540294
+
+
 

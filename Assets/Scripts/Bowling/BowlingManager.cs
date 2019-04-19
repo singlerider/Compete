@@ -74,7 +74,7 @@ public class BowlingManager : MonoBehaviour {
 		// If the user is new, open the tutorial menu
 		CheckNewUser ();
 		// Start input from Control and Headpose
-		MLInput.Start ();
+		MLInput.Start();
 
 		// Get input from the Control, accessible via controller
 		controller = MLInput.GetController (MLInput.Hand.Left);

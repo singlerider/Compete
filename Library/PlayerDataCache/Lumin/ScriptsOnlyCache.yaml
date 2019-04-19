@@ -31,6 +31,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.SpatialTracking.dll:
     - UnityEngine.SpatialTracking.TrackedPoseDriver
     UnityEngine.UI.dll:
@@ -1885,4 +1887,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Main.unity
   - Assets/Scenes/Bowling.unity
   - Assets/Scenes/Darts.unity
-  playerPath: /Users/trevorrose/Desktop/Compete/Compete_Release.mpk
+  playerPath: /Users/trevorrose/Desktop/Compete/Compete_Dev.mpk

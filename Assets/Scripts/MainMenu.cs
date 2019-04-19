@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
@@ -8,11 +9,22 @@ public class MainMenu : MonoBehaviour {
 	private GameObject menu;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 		_cam = GameObject.Find ("/Main Camera");
 		menu = GameObject.Find ("/Menu");
 		menu.transform.position = _cam.transform.position + _cam.transform.forward * 1.0f;
 		menu.transform.rotation = _cam.transform.rotation;
+		StartCoroutine(SetMenu());
+	}
+	IEnumerator SetMenu()
+    {
+        yield return new WaitForSeconds(0.01f);
+		menu.transform.position = _cam.transform.position + _cam.transform.forward * 1.0f;
+		menu.transform.rotation = _cam.transform.rotation;
+    }
+	private void OnApplicationQuit() {
+		SceneManager.UnloadSceneAsync("Main");
+		SceneManager.UnloadSceneAsync("Meshing");
 	}
 
 	// Update is called once per frame
