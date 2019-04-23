@@ -53,30 +53,30 @@
 
 ----- il2cpp Statistics -----
 General:
-	Conversion Time: 44.178 s
+	Conversion Time: 53.567 s
 	Files Written: 186
-	String Literals: 5779
+	String Literals: 5780
 Methods:
-	Total Methods: 35111
-	Non-Generic Methods: 20553
+	Total Methods: 35116
+	Non-Generic Methods: 20558
 	Generic Type Methods: 12341
 	Generic Methods: 2217
 	Shared Methods: 14536
 	Methods with Tail Calls : 0
 Metadata:
-	Total: 3,669.73 kb
-	String Literals: 45.15 kb
-	String Literal Data: 178.34 kb
+	Total: 3,670.17 kb
+	String Literals: 45.16 kb
+	String Literal Data: 178.39 kb
 	Metadata Strings: 460.70 kb
 	Events: 1.88 kb
 	Properties: 75.53 kb
-	Methods: 698.81 kb
+	Methods: 698.97 kb
 	Parameter Default Values: 1.00 kb
 	Field Default Values: 63.43 kb
 	Field and Parameter Default Values Data: 87.04 kb
-	Field Marshaled Sizes: 13.16 kb
-	Parameters: 290.47 kb
-	Fields: 178.34 kb
+	Field Marshaled Sizes: 13.17 kb
+	Parameters: 290.51 kb
+	Fields: 178.35 kb
 	Generic Parameters: 7.23 kb
 	Generic Parameter Constraints: 0.32 kb
 	Generic Containers: 5.86 kb
@@ -87,8 +87,8 @@ Metadata:
 	Type Definitions: 328.38 kb
 	Images: 1.88 kb
 	Assemblies: 3.19 kb
-	Metadata Usage Lists: 276.93 kb
-	Metadata Usage Pairs: 637.16 kb
+	Metadata Usage Lists: 276.97 kb
+	Metadata Usage Pairs: 637.29 kb
 	Field Refs: 1.14 kb
 	Referenced Assemblies: 0.92 kb
 	Attribute Types Ranges: 71.26 kb
@@ -98,7 +98,7 @@ Metadata:
 	Windows Runtime type names: 0.00 kb
 	Exported Types: 6.16 kb
 Codegen:
-	NullChecks : 63088
+	NullChecks : 63094
 Hashing:
 	String Literal Hash Collisions : 0
 	Type Hash Collisions : 0
@@ -115,71 +115,71 @@ Interop:
 	COM callable wrapper methods that were forwarded to call base class method : 0
 Compilation:
 	Total Files: 218
-	Files Compiled: 1
-	Cache Hits: 217
+	Files Compiled: 2
+	Cache Hits: 216
 	Cache Hit %: 99
 
 
 ----Assembly Conversion Times----
-	Convert Assembly-CSharp (1047.18212890625ms)
-	Convert com.unity.multiplayer-hlapi.Runtime (1249.93701171875ms)
-	Convert LuminMediaPlayer (339.489440917969ms)
-	Convert LuminUnity (1758.23449707031ms)
-	Convert Mono.Security (22.9487743377686ms)
-	Convert MSA.Runtime (59.2977676391602ms)
-	Convert mscorlib (6695.9462890625ms)
-	Convert netstandard (0.829769015312195ms)
-	Convert System (1294.05212402344ms)
-	Convert System.Configuration (9.72442436218262ms)
-	Convert System.Core (4.05193376541138ms)
-	Convert System.Diagnostics.StackTrace (1.20774602890015ms)
-	Convert System.Globalization.Extensions (0.82594096660614ms)
-	Convert System.Xml (7.42453384399414ms)
-	Convert Unity.TextMeshPro (1926.72290039063ms)
-	Convert UnityEngine (1.16434299945831ms)
-	Convert UnityEngine.AIModule (3.2943959236145ms)
-	Convert UnityEngine.AnimationModule (56.5727119445801ms)
-	Convert UnityEngine.ARModule (3.99904680252075ms)
-	Convert UnityEngine.AssetBundleModule (7.11846494674683ms)
-	Convert UnityEngine.AudioModule (34.6356735229492ms)
-	Convert UnityEngine.CoreModule (797.881103515625ms)
-	Convert UnityEngine.DirectorModule (3.07640290260315ms)
-	Convert UnityEngine.GridModule (1.45653295516968ms)
-	Convert UnityEngine.ImageConversionModule (2.60726094245911ms)
-	Convert UnityEngine.IMGUIModule (273.186370849609ms)
-	Convert UnityEngine.InputModule (10.0628719329834ms)
-	Convert UnityEngine.JSONSerializeModule (9.53764247894287ms)
-	Convert UnityEngine.LuminModule (2.69011783599854ms)
-	Convert UnityEngine.ParticleSystemModule (25.5038452148438ms)
-	Convert UnityEngine.Physics2DModule (40.306713104248ms)
-	Convert UnityEngine.PhysicsModule (47.9605865478516ms)
-	Convert UnityEngine.SharedInternalsModule (30.1931171417236ms)
-	Convert UnityEngine.SpatialTracking (30.8960838317871ms)
-	Convert UnityEngine.TerrainModule (40.9881935119629ms)
-	Convert UnityEngine.TextRenderingModule (32.819164276123ms)
-	Convert UnityEngine.TilemapModule (15.3444671630859ms)
-	Convert UnityEngine.UI (1548.294921875ms)
-	Convert UnityEngine.UIElementsModule (15.0092287063599ms)
-	Convert UnityEngine.UIModule (32.7828941345215ms)
-	Convert UnityEngine.UNETModule (213.637069702148ms)
-	Convert UnityEngine.UnityAnalyticsModule (23.6841335296631ms)
-	Convert UnityEngine.UnityWebRequestModule (84.0120162963867ms)
-	Convert UnityEngine.VFXModule (10.2684135437012ms)
-	Convert UnityEngine.VideoModule (19.1489372253418ms)
-	Convert UnityEngine.VRModule (5.63520622253418ms)
-	Convert UnityEngine.XR.MagicLeap (130.085662841797ms)
-	Convert UnityEngine.XRModule (88.575309753418ms)
+	Convert Assembly-CSharp (1167.90856933594ms)
+	Convert com.unity.multiplayer-hlapi.Runtime (1602.3251953125ms)
+	Convert LuminMediaPlayer (464.795806884766ms)
+	Convert LuminUnity (2125.04541015625ms)
+	Convert Mono.Security (19.2955513000488ms)
+	Convert MSA.Runtime (73.9302825927734ms)
+	Convert mscorlib (7300.4208984375ms)
+	Convert netstandard (0.880321025848389ms)
+	Convert System (1517.09912109375ms)
+	Convert System.Configuration (7.9732608795166ms)
+	Convert System.Core (3.6363000869751ms)
+	Convert System.Diagnostics.StackTrace (0.765841960906982ms)
+	Convert System.Globalization.Extensions (0.787534952163696ms)
+	Convert System.Xml (7.97360992431641ms)
+	Convert Unity.TextMeshPro (2252.43310546875ms)
+	Convert UnityEngine (0.904235005378723ms)
+	Convert UnityEngine.AIModule (2.86610984802246ms)
+	Convert UnityEngine.AnimationModule (52.6687660217285ms)
+	Convert UnityEngine.ARModule (4.09573173522949ms)
+	Convert UnityEngine.AssetBundleModule (6.39880180358887ms)
+	Convert UnityEngine.AudioModule (33.480712890625ms)
+	Convert UnityEngine.CoreModule (797.142578125ms)
+	Convert UnityEngine.DirectorModule (2.88463401794434ms)
+	Convert UnityEngine.GridModule (1.77081096172333ms)
+	Convert UnityEngine.ImageConversionModule (2.01679110527039ms)
+	Convert UnityEngine.IMGUIModule (267.102996826172ms)
+	Convert UnityEngine.InputModule (6.89185285568237ms)
+	Convert UnityEngine.JSONSerializeModule (8.00936412811279ms)
+	Convert UnityEngine.LuminModule (2.06921005249023ms)
+	Convert UnityEngine.ParticleSystemModule (16.0166053771973ms)
+	Convert UnityEngine.Physics2DModule (39.440559387207ms)
+	Convert UnityEngine.PhysicsModule (49.885082244873ms)
+	Convert UnityEngine.SharedInternalsModule (32.6933746337891ms)
+	Convert UnityEngine.SpatialTracking (34.524112701416ms)
+	Convert UnityEngine.TerrainModule (36.1629371643066ms)
+	Convert UnityEngine.TextRenderingModule (29.9277801513672ms)
+	Convert UnityEngine.TilemapModule (15.0835409164429ms)
+	Convert UnityEngine.UI (1759.66821289063ms)
+	Convert UnityEngine.UIElementsModule (15.7381734848022ms)
+	Convert UnityEngine.UIModule (65.0624847412109ms)
+	Convert UnityEngine.UNETModule (194.736175537109ms)
+	Convert UnityEngine.UnityAnalyticsModule (10.4709806442261ms)
+	Convert UnityEngine.UnityWebRequestModule (157.262451171875ms)
+	Convert UnityEngine.VFXModule (11.1963090896606ms)
+	Convert UnityEngine.VideoModule (19.4708805084229ms)
+	Convert UnityEngine.VRModule (4.52173805236816ms)
+	Convert UnityEngine.XR.MagicLeap (223.598815917969ms)
+	Convert UnityEngine.XRModule (82.7606887817383ms)
 
 ----Misc Timing----
-	PreProcessStage: 755.906616210938
+	PreProcessStage: 857.023071289063
 	GenericsCollector.Collect: None
-	WriteGenerics: 11033.6044921875
-	AllAssemblyConversion: 18645.25
+	WriteGenerics: 14061.4208984375
+	AllAssemblyConversion: 21205
 
 ----Generated Files----
-Assembly-CSharp.cpp	2093482
-Assembly-CSharp1.cpp	2196708
-Assembly-CSharp2.cpp	1141340
+Assembly-CSharp.cpp	2103809
+Assembly-CSharp1.cpp	2244177
+Assembly-CSharp2.cpp	1090232
 com.unity.multiplayer-hlapi.Runtime.cpp	1990182
 com.unity.multiplayer-hlapi.Runtime1.cpp	1879596
 com.unity.multiplayer-hlapi.Runtime2.cpp	1919443
@@ -220,7 +220,7 @@ Generics9.cpp	1770690
 Il2CppAttributes.cpp	6213417
 Il2CppCodeRegistration.cpp	7581
 Il2CppCompilerCalculateTypeValues.cpp	4587204
-Il2CppCompilerCalculateTypeValues1.cpp	5009224
+Il2CppCompilerCalculateTypeValues1.cpp	5009779
 Il2CppCompilerCalculateTypeValuesTable.cpp	547441
 Il2CppGenericComDefinitions.cpp	193
 Il2CppGenericMethodPointerTable.cpp	3608285
@@ -309,7 +309,10 @@ UnityEngine.XR.MagicLeap.cpp	691269
 UnityEngine.XRModule.cpp	516994
 UnresolvedVirtualCallStubs.cpp	540294
 
-cpp	540294
+.cpp	540294
+
+
+
 
 
 

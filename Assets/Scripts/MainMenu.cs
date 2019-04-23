@@ -22,10 +22,6 @@ public class MainMenu : MonoBehaviour {
 		menu.transform.position = _cam.transform.position + _cam.transform.forward * 1.0f;
 		menu.transform.rotation = _cam.transform.rotation;
     }
-	private void OnApplicationQuit() {
-		SceneManager.UnloadSceneAsync("Main");
-		SceneManager.UnloadSceneAsync("Meshing");
-	}
 
 	// Update is called once per frame
 	void Update () {

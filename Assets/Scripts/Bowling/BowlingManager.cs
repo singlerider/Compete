@@ -105,6 +105,14 @@ public class BowlingManager : MonoBehaviour {
 		MLInput.Stop ();
 		MLHands.Stop();
     }
+	private void OnDisable() {
+		MLInput.Stop();
+		MLHands.Stop();
+	}
+	private void OnApplicationPause(bool pause) {
+		MLInput.Stop();
+		MLHands.Stop();
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -338,7 +346,7 @@ public class BowlingManager : MonoBehaviour {
 			toAverage += toAdd;
 		}
 		toAverage /= Deltas.Count;
-		var forcePerSecondAvg = toAverage * 500;
+		var forcePerSecondAvg = toAverage * 650;
 		forcePerSecond = forcePerSecondAvg;
 		bowlingBall.transform.position = controller.Position;
 	}
@@ -383,6 +391,8 @@ public class BowlingManager : MonoBehaviour {
 
 		if (button == MLInputControllerButton.HomeTap && firstHomePressed) {
 			if (Time.time - timeOfFirstHomePress < timeHomePress) {
+				MLInput.Stop();
+				MLHands.Stop();
 				Application.Quit();
 				timeOfFirstHomePress = 0f;
 			}

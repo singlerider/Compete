@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	private MLInputController controller;
 	public LineRenderer laserLineRenderer;
 	public GameObject control, mainMenu, privacyPolicyMenu, joinLobby, exitLobby, quitMenu, mainCam;
-	private bool pressedExit = false;
+	private bool pressedExit = false, allowUpdate = true;
 	// Use this for initialization
 	void Start () {
 		// Start Magic Leap controller input
@@ -28,17 +28,27 @@ public class GameManager : MonoBehaviour {
 	private void OnDestroy() {
 		// Stop Magic Leap controller input
 		MLInput.Stop();
-        SceneManager.UnloadSceneAsync("Main");
     }
+
+	private void OnDisable() {
+		MLInput.Stop();
+	}
+	private void OnApplicationPause(bool pause) {
+		print("Quitting");
+		MLInput.Stop();
+		SceneManager.UnloadSceneAsync("Main");
+	}
 	
 	// Update is called once per frame
 	void Update () {
-		// Always set the control GameObject's position to the controller's position in order to maintain tracking accuracy
-		control.transform.position = controller.Position;
-		control.transform.rotation = controller.Orientation;
+		if (allowUpdate) {
+			// Always set the control GameObject's position to the controller's position in order to maintain tracking accuracy
+			control.transform.position = controller.Position;
+			control.transform.rotation = controller.Orientation;
 
-		// In the main scene, SetLine is always called because there will be no other selected options
-		SetLine();
+			// In the main scene, SetLine is always called because there will be no other selected options
+			SetLine();
+		}
 	}
 	private void SetLine() {
 		// Initialize variables for use 
@@ -80,6 +90,9 @@ public class GameManager : MonoBehaviour {
 				//PhotonLobby.OnCancelButtonClicked();
 			} else if ((rayHit.collider.name == "ConfirmExit" || rayHit.collider.name == "LeaveGame") && controller.TriggerValue >= 0.9f) {
 				if (pressedExit == false) {
+					print("Stopping Input services and quitting application");
+					allowUpdate = false;
+					//MLInput.Stop();
 					Application.Quit();
 				}
 			} else if ((rayHit.collider.name == "StayInGame" || rayHit.collider.name == "ContinuePlaying") && controller.TriggerValue >= 0.9f) {

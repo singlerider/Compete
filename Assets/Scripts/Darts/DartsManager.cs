@@ -63,9 +63,18 @@ public class DartsManager : MonoBehaviour {
 
 	private void OnDestroy () {
 		MLInput.Stop ();
-        SceneManager.UnloadSceneAsync("Darts");
+        //SceneManager.UnloadSceneAsync("Darts");
 		MLHands.Stop();
     }
+	private void OnDisable() {
+		MLInput.Stop();
+		MLHands.Stop();
+	}
+
+	private void OnApplicationPause(bool pause) {
+		MLInput.Stop();
+		MLHands.Stop();
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -218,6 +227,10 @@ public class DartsManager : MonoBehaviour {
 			endPosition = controller.Position + (control.transform.forward * 3.0f);
 			laserLineRenderer.SetPosition (1, endPosition);
 		}
+		if (holding == holdState.dart) {
+			laserLineRenderer.SetPosition(0, mainCam.transform.position);
+			laserLineRenderer.SetPosition(1, mainCam.transform.position);
+		}
 	}
 	private void PlaceObject () {
 		if (holding == holdState.dart) {
@@ -334,6 +347,8 @@ public class DartsManager : MonoBehaviour {
 
 		if (button == MLInputControllerButton.HomeTap && firstHomePressed) {
 			if (Time.time - timeOfFirstHomePress < timeHomePress) {
+				MLInput.Stop();
+				MLHands.Stop();
 				Application.Quit();
 				timeOfFirstHomePress = 0f;
 			}
