@@ -393,7 +393,9 @@ public class BowlingManager : MonoBehaviour {
 			if (Time.time - timeOfFirstHomePress < timeHomePress) {
 				MLInput.Stop();
 				MLHands.Stop();
+				Debug.Log("BOWLING MANAGER: QUITTING APP");
 				Application.Quit();
+				Debug.Log("BOWLING MANAGER: AFTER APP CLOSE");
 				timeOfFirstHomePress = 0f;
 			}
 			firstHomePressed = false;

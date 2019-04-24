@@ -92,8 +92,13 @@ public class GameManager : MonoBehaviour {
 				if (pressedExit == false) {
 					print("Stopping Input services and quitting application");
 					allowUpdate = false;
-					//MLInput.Stop();
+					MLInput.Stop();
+					 System.Threading.Thread.Sleep(1000);
+					Debug.Log("GAME MANAGER: QUITTING APP");
 					Application.Quit();
+					Debug.Log("GAME MANAGER: AFTER APP CLOSE");
+					// UnityEditor.EditorApplication.isPlaying = false;
+					OnDestroy();
 				}
 			} else if ((rayHit.collider.name == "StayInGame" || rayHit.collider.name == "ContinuePlaying") && controller.TriggerValue >= 0.9f) {
 				if (pressedExit == false) {
